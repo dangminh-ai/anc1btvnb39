@@ -799,18 +799,13 @@
   .fix-row { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line); font-size: 14.5px; }
   .fix-row select.inline-blank { min-width: 150px; max-width: 100%; }
   .passage-box u { text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
-  .key-group {
-    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px;
-    color: #fffdf8; background: var(--pine-light); display: inline-block;
-    padding: 5px 13px; border-radius: 999px; margin: 18px 0 8px 0;
+
+  .retry-btn {
+    font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+    padding: 9px 18px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--gold-soft); background: var(--gold-soft); color: var(--pine);
   }
-  .key-item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; line-height: 1.65; }
-  .key-item:last-child { border-bottom: none; }
-  .key-num {
-    flex: 0 0 auto; font-weight: 700; color: #fff; background: var(--pine);
-    border-radius: 6px; padding: 1px 8px; font-family: 'Inter', sans-serif; font-size: 13px; margin-top: 2px;
-  }
-  .key-body strong { color: var(--pine); }
+  .retry-btn:hover { background: #f1e2bd; }
 </style>
 </head>
 
@@ -838,6 +833,7 @@
     <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
       <span class="mascot" id="mascotEl" title="Bạn đồng hành nhỏ theo dõi tiến độ của em">😴</span>
       <span class="status-chip streak" id="streakChip" style="display:none;">🔥 Streak: 0</span>
+      <span class="status-chip attempt" id="attemptChip">Lần làm: 1</span>
       <span class="status-chip timer" id="timerChip" title="Thời gian đã làm bài - không giới hạn">⏱ 00:00</span>
       <span class="status-chip switches" id="switchChip">Rời khỏi trang: 0 lần</span>
     </div>
@@ -856,7 +852,7 @@
       <li>Gặp từ nào chưa chắc nghĩa, em <strong>bôi đen từ đó</strong> và bấm nút hiện ra để gạch chân đánh dấu lại để buổi sau anh chữa kỹ hơn nha.</li>
       <li>Với câu trắc nghiệm, em <strong>bấm chuột phải</strong> (máy tính) hoặc <strong>chạm hai lần liên tiếp</strong> (điện thoại) vào đáp án em muốn loại để gạch nó đi, đỡ phải nhớ trong đầu là mình đã loại đáp án nào rồi.</li>
       <li>Sau khi <strong>nộp bài</strong>, các câu Phần I, II &amp; III được tự động chấm sẽ hiện rõ <strong>đúng (xanh) / sai (đỏ)</strong> ngay trên bài làm, kèm một bảng tổng hợp để em bấm vào xem lại từng câu sai. Ở Phần III, mỗi câu gồm hai ô: chọn phần sai (A, B, C, D) và viết lại dạng đúng, nên sẽ được tính thành hai ý (a, b). Phần IV (Sentence Transformation) do có nhiều cách diễn đạt đúng nên anh/chị sẽ chấm tay.</li>
-      <li>Ngay sau khi nộp bài, <strong>đáp án và giải thích chi tiết</strong> của cả 30 câu sẽ hiện ra bên dưới phần điểm để em đối chiếu và tự sửa lại những chỗ còn sai.</li>
+      <li><strong>Không giới hạn số lần nộp bài.</strong> Sau mỗi lần nộp, em bấm <strong>"Làm lại"</strong> để sửa bài rồi nộp tiếp. Bài làm cũ được giữ nguyên, câu nào đã chấm đúng/sai vẫn hiện màu cho tới khi em sửa câu đó. Mỗi lần nộp được gửi riêng cho anh/chị và ghi rõ là <strong>lần nộp thứ mấy</strong>.</li>
       <li>Cuối bài có mục để em <strong>đánh dấu câu muốn xem lại</strong> và chia sẻ điều em muốn học thêm (hãy giúp anh cải thiện nền tảng này).</li>
       <li>Bấm <strong>"Nộp bài"</strong> để gửi kết quả trực tiếp cho anh nha, và đừng quên ghi tên.</li>
     </ul>
@@ -869,7 +865,7 @@
         <span>✂️ Công cụ gạch bỏ đáp án sai</span>
         <span>📝 Bắt buộc ghi tên trước khi nộp bài</span>
         <span>🔊 Âm thanh nhẹ khi làm bài</span>
-        <span>📖 Đáp án và giải thích chi tiết sau khi nộp bài</span>
+        <span>🔁 Nộp bài nhiều lần, không giới hạn</span>
       </div>
     </div>
     <div class="guide-wish">Chúc em làm bài thật tốt (vì kết quả sẽ được tổng hợp và gửi lại cho Phụ huynh nên làm nghiêm túc nha mấy đứa)! 🍀</div>
@@ -888,7 +884,7 @@
 
   <div class="card" id="resultsReviewCard" style="display:none;">
     <div class="section-title">📊 Chi tiết đúng / sai</div>
-    <div class="section-sub">Danh sách các câu Phần I, II &amp; III được chấm tự động. Bấm vào một ô để cuộn tới câu đó và xem lại.</div>
+    <div class="section-sub" id="resultsReviewSub">Danh sách các câu Phần I, II &amp; III được chấm tự động. Bấm vào một ô để cuộn tới câu đó và xem lại.</div>
     <div class="review-grid" id="resultsReview"></div>
     <div class="review-legend">
       <span><span class="review-dot correct"></span> Trả lời đúng</span>
@@ -916,18 +912,12 @@
     <textarea class="essay-area" id="featureSuggestions" placeholder="Ví dụ: em muốn có thêm... (không bắt buộc)" style="min-height:100px;"></textarea>
   </div>
 
-  <div class="card" id="answerKeyCard" style="display:none;">
-    <div class="section-title">📖 Đáp án và giải thích chi tiết</div>
-    <div class="section-sub">Đối chiếu với bài làm của em. Ở Phần III, đáp án gồm phần sai (a) và dạng sửa lại (b). Phần IV có thể có cách viết khác vẫn đúng, anh/chị sẽ chấm riêng.</div>
-    <div class="key-list"><div class="key-group">DẠNG 1. MATCHING</div><div class="key-item"><span class="key-num">1</span><div class="key-body"><strong>D</strong> volatile = dễ biến động, thất thường, có thể đổi chiều đột ngột, thường theo hướng xấu (a volatile economy).</div></div><div class="key-item"><span class="key-num">2</span><div class="key-body"><strong>A</strong> ulterior = ẩn giấu, không nói rõ ra. Hay gặp nhất trong cụm ulterior motives (động cơ thầm kín).</div></div><div class="key-item"><span class="key-num">3</span><div class="key-body"><strong>E</strong> aloof = xa cách, lạnh nhạt, không hòa nhập với người xung quanh.</div></div><div class="key-item"><span class="key-num">4</span><div class="key-body"><strong>B</strong> tedious = tẻ nhạt, chán ngắt vì kéo dài quá lâu.</div></div><div class="key-item"><span class="key-num">5</span><div class="key-body"><strong>C</strong> unprecedented = chưa từng có tiền lệ.</div></div><div class="key-group">DẠNG 2. MULTIPLE CHOICE</div><div class="key-item"><span class="key-num">6</span><div class="key-body"><strong>B. latter</strong> Đề nói đến <em>two</em> proposed strategies, nên dùng the former (cái được nhắc trước) và the latter (cái được nhắc sau). Last và latest dùng khi có từ ba đối tượng trở lên hoặc mang nghĩa &quot;mới nhất&quot;, còn later chỉ thời gian.</div></div><div class="key-item"><span class="key-num">7</span><div class="key-body"><strong>B. to / by</strong> Các tính từ gốc Latin như senior, junior, superior, inferior, prior đi với <em>to</em>, không đi với than. Mức chênh lệch được nối bằng <em>by</em>: senior to sb by three years.</div></div><div class="key-item"><span class="key-num">8</span><div class="key-body"><strong>B. strict</strong> So sánh hai phẩm chất của cùng một người dùng cấu trúc more + Adj1 + than + Adj2, giữ nguyên dạng gốc của Adj1 (more strict than harsh), không thêm đuôi -er.</div></div><div class="key-item"><span class="key-num">9</span><div class="key-body"><strong>B. aloof</strong> Trước chỗ trống đã có sẵn <em>more</em> nên chỉ điền tính từ nguyên mẫu. Aloof (tính từ bắt đầu bằng a-, thường làm vị ngữ) khi so sánh hơn dùng more aloof, không dùng aloofer. Chọn D sẽ thành &quot;more more aloof&quot;.</div></div><div class="key-item"><span class="key-num">10</span><div class="key-body"><strong>B. further</strong> Further notice = thông báo thêm, mang nghĩa trừu tượng. Farther chủ yếu dùng cho khoảng cách vật lý đo được.</div></div><div class="key-item"><span class="key-num">11</span><div class="key-body"><strong>A. hardest-working</strong> Tính từ ghép dạng tính từ ngắn + V-ing (hard-working) biến đổi ở thành phần đầu khi so sánh: harder-working, hardest-working. Có <em>by far the</em> nên cần dạng so sánh nhất.</div></div><div class="key-item"><span class="key-num">12</span><div class="key-body"><strong>B. in / to</strong> Inferior in quality (kém hơn về chất lượng), inferior <em>to</em> sth (không dùng than). Prior <em>to</em> = trước khi.</div></div><div class="key-item"><span class="key-num">13</span><div class="key-body"><strong>C. more swiftly</strong> Swiftly là trạng từ đuôi -ly nên so sánh hơn dùng more swiftly (không có swiftlier). Cụm <em>than any of its rivals</em> cho thấy đây là câu so sánh.</div></div><div class="key-item"><span class="key-num">14</span><div class="key-body"><strong>A. prompt / grim</strong> Chỗ trống thứ nhất cần tính từ nguyên mẫu prompt bổ nghĩa cho intervention. Chỗ trống thứ hai đứng sau increasingly (đã mang nghĩa &quot;ngày càng&quot;) nên chỉ cần tính từ gốc grim, không thêm -er.</div></div><div class="key-item"><span class="key-num">15</span><div class="key-body"><strong>A. nerve-racking / subtler</strong> Nerve-racking (gây căng thẳng) mô tả sự việc, còn nerve-racked mô tả người bị căng thẳng. Subtle là tính từ hai âm tiết tận cùng -le nên so sánh hơn là subtler (far subtler tactic).</div></div><div class="key-group">DẠNG 3. ERROR IDENTIFICATION</div><div class="key-item"><span class="key-num">16</span><div class="key-body"><strong>B. farther &rarr; further</strong> Data ở đây mang nghĩa trừu tượng (thêm dữ liệu), nên dùng further. Farther dành cho khoảng cách vật lý.</div></div><div class="key-item"><span class="key-num">17</span><div class="key-body"><strong>B. tireder &rarr; more tired</strong> Tính từ có đuôi -ed (tired) không thêm -er mà dùng more khi so sánh: more tired.</div></div><div class="key-item"><span class="key-num">18</span><div class="key-body"><strong>B. elder &rarr; older</strong> Elder chỉ đứng trước danh từ để nói về thứ bậc anh chị em (my elder brother). Khi so sánh tuổi trực tiếp với than thì phải dùng older than.</div></div><div class="key-item"><span class="key-num">19</span><div class="key-body"><strong>A. smooth &rarr; smoothly (more smoothly)</strong> Process là động từ nên cần trạng từ bổ nghĩa. Dạng so sánh hơn là more smoothly, song song với meticulously ở phía sau.</div></div><div class="key-item"><span class="key-num">20</span><div class="key-body"><strong>B. more superior &rarr; superior</strong> Superior vốn đã mang nghĩa so sánh (đi với to), nên không thêm more hoặc most phía trước.</div></div><div class="key-group">DẠNG 4. SENTENCE TRANSFORMATION</div><div class="key-item"><span class="key-num">21</span><div class="key-body"><strong>The director's debut movie is far more captivating than the sequel.</strong> Nowhere near as ... as = far more ... than, đảo vai trò hai đối tượng.</div></div><div class="key-item"><span class="key-num">22</span><div class="key-body"><strong>The first painting is just as valuable as the second (one).</strong> Equally valuable = just as valuable as.</div></div><div class="key-item"><span class="key-num">23</span><div class="key-body"><strong>Henry's younger cousin drives much more recklessly than Henry (does).</strong> Not nearly as ... as = much more ... than, đảo chủ ngữ. Trạng từ recklessly dùng more.</div></div><div class="key-item"><span class="key-num">24</span><div class="key-body"><strong>Kevin is by far the fastest athlete in our track club.</strong> No other ... as fast as = so sánh nhất. By far đứng trước the + dạng so sánh nhất.</div></div><div class="key-item"><span class="key-num">25</span><div class="key-body"><strong>The first laptop model is slightly more expensive than the second (one).</strong> Slightly đứng trước dạng so sánh hơn để chỉ mức chênh lệch nhỏ.</div></div><div class="key-item"><span class="key-num">26</span><div class="key-body"><strong>She felt more sad than angry when she left the room.</strong> So sánh hai tính chất của cùng một người: more + Adj1 + than + Adj2, giữ nguyên sad, không chia sadder.</div></div><div class="key-item"><span class="key-num">27</span><div class="key-body"><strong>She was appointed to the board because she was senior to him by three years in executive service.</strong> Senior to sb by + khoảng thời gian.</div></div><div class="key-item"><span class="key-num">28</span><div class="key-body"><strong>Without prompt action, the company will face an extremely grim future.</strong> If we do not ... = Without + danh từ. Immediate action = prompt action.</div></div><div class="key-item"><span class="key-num">29</span><div class="key-body"><strong>Auditing the financial statements was far more time-consuming and (far more) stressful than the department had expected.</strong> Far đứng trước dạng so sánh hơn. Time-consuming (tính từ ghép V-ing) so sánh bằng more.</div></div><div class="key-item"><span class="key-num">30</span><div class="key-body"><strong>... whereas the latter employs statistical modeling.</strong> Hai đối tượng: the former (cái trước) và the latter (cái sau).</div></div></div>
-  </div>
-
   <div class="score-box" id="scoreBox"></div>
 
 </div>
 
 <div class="footer-bar">
-  <button class="btn-submit" id="submitBtn">Nộp bài</button>
+  <button class="btn-submit" id="submitBtn">Nộp bài (lần 1)</button>
 </div>
 <div id="emailStatus"></div>
 
@@ -1680,6 +1670,19 @@ function buildFlagGrid() {
 
 // ---------- Submit / grading ----------
 let examLocked = false;
+let attemptNo = 1;
+let attemptHistory = [];
+
+function updateAttemptChip() {
+  const chip = document.getElementById('attemptChip');
+  if (chip) chip.textContent = 'Lần làm: ' + attemptNo;
+}
+function updateSubmitButton() {
+  const b = document.getElementById('submitBtn');
+  if (!b) return;
+  b.disabled = false;
+  b.textContent = examLocked ? '🔁 Làm lại (nộp lần thứ ' + (attemptNo + 1) + ')' : 'Nộp bài (lần ' + attemptNo + ')';
+}
 
 function lockAllInputs() {
   examArea.querySelectorAll('input, select, textarea').forEach(i => i.disabled = true);
@@ -1763,41 +1766,105 @@ function buildResultsReview() {
   });
 }
 
-function doSubmit() {
+function doSubmit(restoring) {
   examLocked = true;
   const { autoScore, autoTotal } = gradeExam();
   lockAllInputs();
   document.body.classList.remove('exam-active');
+  if (!restoring) attemptHistory.push({ n: attemptNo, score: autoScore, total: autoTotal });
 
   const manualCount = registry.filter(i => !i.auto).length;
   const wrongCount = autoTotal - autoScore;
   buildResultsReview();
-  const keyCard = document.getElementById('answerKeyCard');
-  if (keyCard) keyCard.style.display = 'block';
+  const reviewSub = document.getElementById('resultsReviewSub');
+  if (reviewSub) reviewSub.textContent = 'Kết quả lần nộp thứ ' + attemptNo + ' (Phần I, II & III được chấm tự động). Bấm vào một ô để cuộn tới câu đó và xem lại. Khi em sửa câu nào, màu đúng/sai của câu đó sẽ được xóa để em nộp lại.';
   const scoreBox = document.getElementById('scoreBox');
   scoreBox.style.display = 'block';
+  const history = attemptHistory.length > 1
+    ? '<p>Các lần nộp: ' + attemptHistory.map(h => 'Lần ' + h.n + ': ' + h.score + ' / ' + h.total).join(' &middot; ') + '</p>'
+    : '';
   scoreBox.innerHTML =
+    '<p><strong>Đã nộp bài: lần thứ ' + attemptNo + '</strong></p>' +
     '<p><strong>Điểm tự động chấm: ' + autoScore + ' / ' + autoTotal + '</strong> (Phần I, II &amp; III - matching, trắc nghiệm &amp; tìm lỗi sai)</p>' +
     '<p>Số câu đúng: ' + autoScore + ' &middot; Số câu sai/bỏ trống: ' + wrongCount + ' (xem chi tiết ở bảng phía trên điểm số).</p>' +
+    history +
     (manualCount > 0 ? '<p>Còn ' + manualCount + ' câu (Phần IV - Sentence Transformation) cần thầy/cô chấm trực tiếp.</p>' : '') +
-    '<p>Số lần rời khỏi trang trong khi làm bài: ' + tabSwitchCount + '</p>' +
-    '<p>Tổng thời gian làm bài: ' + formatTime(secondsElapsed) + '</p>' +
-    '<p style="margin-top:12px;">Cảm ơn em đã hoàn thành bài tập buổi 39. Kết quả, từ vựng em đánh dấu và các câu cần xem lại đang được tự động gửi cho anh/chị, em không cần làm gì thêm. Hẹn gặp em buổi học tới! 🎉</p>';
+    '<p>Số lần rời khỏi trang trong lần làm này: ' + tabSwitchCount + '</p>' +
+    '<p>Thời gian làm bài lần này: ' + formatTime(secondsElapsed) + '</p>' +
+    '<p style="margin-top:12px;">Cảm ơn em đã hoàn thành bài tập buổi 39. Kết quả lần nộp thứ ' + attemptNo + ', từ vựng em đánh dấu và các câu cần xem lại ' + (restoring ? 'đã được gửi' : 'đang được tự động gửi') + ' cho anh/chị. Em muốn sửa lại thì bấm "Làm lại" bên dưới, nộp bao nhiêu lần cũng được. Hẹn gặp em buổi học tới! 🎉</p>' +
+    '<div style="margin-top:14px;"><button type="button" class="retry-btn" id="retryBtn">🔁 Làm lại (nộp lần thứ ' + (attemptNo + 1) + ')</button></div>';
+  const retryBtn = document.getElementById('retryBtn');
+  if (retryBtn) retryBtn.addEventListener('click', startNextAttempt);
   const reviewCard = document.getElementById('resultsReviewCard');
   if (reviewCard && reviewCard.style.display !== 'none' && reviewCard.scrollIntoView) {
     reviewCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
   } else if (scoreBox.scrollIntoView) {
     scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
-  playFanfare();
-  fireConfetti();
+  if (!restoring) {
+    playFanfare();
+    fireConfetti();
+  }
 
-  document.getElementById('submitBtn').disabled = true;
+  updateSubmitButton();
+  updateAttemptChip();
   stopTimer();
-  sendResultEmail(autoScore, autoTotal);
+  if (!restoring) {
+    saveState();
+    sendResultEmail(autoScore, autoTotal);
+  }
 }
 
+function startNextAttempt() {
+  if (!examLocked) return;
+  attemptNo++;
+  examLocked = false;
+  examArea.querySelectorAll('input, select, textarea').forEach(i => i.disabled = false);
+  document.querySelectorAll('.flag-chip').forEach(c => c.disabled = false);
+  ['futureTopics', 'featureSuggestions'].forEach(id => {
+    const e = document.getElementById(id);
+    if (e) e.disabled = false;
+  });
+  Object.keys(listeningState).forEach(id => updateListenButton(id));
+
+  const scoreBox = document.getElementById('scoreBox');
+  scoreBox.style.display = 'none';
+  scoreBox.innerHTML = '';
+  const status = document.getElementById('emailStatus');
+  if (status) { status.style.display = 'none'; status.textContent = ''; }
+
+  secondsElapsed = 0;
+  updateTimerDisplay();
+  tabSwitchCount = 0;
+  document.getElementById('switchChip').textContent = 'Rời khỏi trang: 0 lần';
+  document.body.classList.add('exam-active');
+  stopTimer();
+  startTimer();
+
+  resetStreak();
+  updateProgress();
+  updateAttemptChip();
+  updateSubmitButton();
+  saveState();
+  if (window.scrollTo) window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// when a student changes an answer in a new attempt, the old red/green mark on that item is cleared
+function clearMarkOnEdit(e) {
+  if (examLocked) return;
+  const t = e.target;
+  if (!t || !t.classList) return;
+  if (t.classList.contains('inline-blank') || t.classList.contains('text-input')) t.classList.remove('correct', 'incorrect');
+  if (t.type === 'radio') {
+    const card = t.closest('.card');
+    if (card) card.querySelectorAll('.option-label').forEach(l => l.classList.remove('correct', 'incorrect'));
+  }
+}
+examArea.addEventListener('input', clearMarkOnEdit);
+examArea.addEventListener('change', clearMarkOnEdit);
+
 document.getElementById('submitBtn').addEventListener('click', () => {
+  if (examLocked) { startNextAttempt(); return; }
   const nameEl = document.getElementById('studentName');
   if (!nameEl.value.trim()) {
     document.getElementById('nameBox').classList.add('field-error');
@@ -1810,6 +1877,8 @@ document.getElementById('submitBtn').addEventListener('click', () => {
   if (unanswered.length > 0) {
     const listBox = document.getElementById('unansweredList');
     listBox.innerHTML = unanswered.map(i => 'Phần ' + i.partId + ' - Câu ' + i.num).join('<br>');
+    document.getElementById('confirmTitle').textContent = 'Nộp bài lần thứ ' + attemptNo + ': bạn còn câu chưa trả lời';
+    document.getElementById('confirmSubmitAnyway').textContent = 'Vẫn nộp bài (lần ' + attemptNo + ')';
     document.getElementById('confirmText').textContent = 'Bạn còn ' + unanswered.length + ' câu chưa trả lời:';
     document.getElementById('confirmOverlay').style.display = 'flex';
   } else {
@@ -1826,13 +1895,18 @@ document.getElementById('confirmSubmitAnyway').addEventListener('click', () => {
 
 // ---------- Email (sent automatically on submit) ----------
 function sendResultEmail(autoScore, autoTotal) {
+  const n = attemptNo;
   const name = document.getElementById('studentName').value.trim() || "Học sinh chưa ghi tên";
 
   let lines = [];
   lines.push("Học sinh: " + name);
+  lines.push("LẦN NỘP THỨ: " + n);
   lines.push("Đề: " + (examData.examTitle || "ADVANCED ENGLISH PLACEMENT TEST"));
   lines.push("Điểm tự động chấm: " + autoScore + " / " + autoTotal);
-  lines.push("Số lần rời khỏi trang khi làm bài: " + tabSwitchCount);
+  lines.push("Số lần rời khỏi trang khi làm bài (lần này): " + tabSwitchCount);
+  lines.push("Thời gian làm bài (lần này): " + formatTime(secondsElapsed));
+  const earlier = attemptHistory.filter(h => h.n < n);
+  if (earlier.length > 0) lines.push("Điểm các lần nộp trước: " + earlier.map(h => "Lần " + h.n + ": " + h.score + " / " + h.total).join("; "));
   lines.push("");
 
   examData.parts.forEach(part => {
@@ -1890,14 +1964,15 @@ function sendResultEmail(autoScore, autoTotal) {
   if (status) {
     status.style.display = 'block';
     status.style.color = '#4b5b54';
-    status.textContent = "Đang gửi kết quả cho giáo viên...";
+    status.textContent = "Đang gửi kết quả lần nộp thứ " + n + " cho giáo viên...";
   }
 
   fetch("https://formsubmit.co/ajax/" + TEACHER_EMAIL, {
     method: "POST",
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify({
-      _subject: "Kết quả bài tập - Buổi 39 (So sánh nâng cao) - " + name,
+      _subject: "Kết quả bài tập - Buổi 39 (So sánh nâng cao) - Lần nộp thứ " + n + " - " + name,
+      attempt: String(n),
       name: name,
       score: autoScore + " / " + autoTotal,
       tab_switches: String(tabSwitchCount),
@@ -1908,13 +1983,13 @@ function sendResultEmail(autoScore, autoTotal) {
   .then(() => {
     if (status) {
       status.style.color = '#1c6e4a';
-      status.textContent = "Kết quả đã được gửi đến giáo viên.";
+      status.textContent = "Kết quả lần nộp thứ " + n + " đã được gửi đến giáo viên.";
     }
   })
   .catch(() => {
     if (status) {
       status.style.color = '#a8402d';
-      status.textContent = "Gửi thất bại. Vui lòng kiểm tra kết nối mạng - em cứ yên tâm, bài làm vẫn đã được lưu, anh/chị sẽ hỗ trợ lấy lại kết quả nếu cần.";
+      status.textContent = "Gửi lần nộp thứ " + n + " thất bại. Vui lòng kiểm tra kết nối mạng - em cứ yên tâm, bài làm vẫn đã được lưu, anh/chị sẽ hỗ trợ lấy lại kết quả nếu cần.";
     }
   });
 }
@@ -1977,6 +2052,8 @@ function saveState() {
       tabSwitchCount: tabSwitchCount,
       secondsElapsed: secondsElapsed,
       examLocked: examLocked,
+      attemptNo: attemptNo,
+      attemptHistory: attemptHistory,
       listening: listening,
       savedAt: Date.now()
     };
@@ -2051,8 +2128,12 @@ function restoreState() {
   }
   updateTimerDisplay();
 
+  if (typeof state.attemptNo === 'number' && state.attemptNo >= 1) attemptNo = state.attemptNo;
+  if (Array.isArray(state.attemptHistory)) attemptHistory = state.attemptHistory;
+  updateAttemptChip();
+
   if (state.examLocked) {
-    doSubmit();
+    doSubmit(true);
   }
 }
 
@@ -2104,6 +2185,8 @@ renderExam();
 buildFlagGrid();
 renderVocabList();
 restoreState();
+updateAttemptChip();
+updateSubmitButton();
 resetStreak();
 updateProgress();
 if (!examLocked) {
