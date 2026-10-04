@@ -1,0 +1,2116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced English – Bài tập về nhà Buổi 39</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://www.youtube.com/iframe_api"></script>
+<style>
+
+  :root {
+    --ink: #16241f;
+    --ink-soft: #4b5b54;
+    --paper: #f4efe4;
+    --paper-card: #fffdf8;
+    --line: #ddd3bd;
+    --pine: #10362b;
+    --pine-light: #1c5240;
+    --gold: #b4863b;
+    --gold-soft: #e8d6ac;
+    --terracotta: #a8492f;
+    --ok: #1c6e4a;
+    --ok-bg: #e4f2ea;
+    --bad: #a8402d;
+    --bad-bg: #fbe9e4;
+    --shadow: 0 10px 30px -14px rgba(16,54,43,0.28);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    line-height: 1.7;
+  }
+  body {
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(180,134,59,0.08), transparent 40%),
+      radial-gradient(circle at 90% 92%, rgba(16,54,43,0.07), transparent 45%);
+  }
+  body.exam-active { -webkit-user-select: none; user-select: none; }
+  body.exam-active input, body.exam-active textarea, body.exam-active select { user-select: text; -webkit-user-select: text; }
+
+  ::selection { background: var(--gold-soft); }
+
+  /* ---------- Top masthead ---------- */
+  .top-bar {
+    background: linear-gradient(155deg, var(--pine) 0%, #0c2a21 65%, #0a231b 100%);
+    color: #f4efe4;
+    padding: 34px 24px 26px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .top-bar::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(115deg, rgba(244,239,228,0.035) 0 2px, transparent 2px 26px);
+    pointer-events: none;
+  }
+  .top-bar .eyebrow {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin: 0 0 10px 0;
+    opacity: 0.9;
+  }
+  .top-bar h1 {
+    margin: 0 0 10px 0;
+    font-family: 'Playfair Display', 'Source Serif 4', Georgia, serif;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.3px;
+    position: relative;
+  }
+  .top-bar p {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 13.5px;
+    letter-spacing: 0.2px;
+    color: #d9e4dc;
+    position: relative;
+  }
+  .top-bar .divider-orn {
+    width: 64px; height: 2px; margin: 16px auto 0 auto;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    position: relative;
+  }
+
+  /* ---------- Status / progress bar ---------- */
+  .status-bar {
+    position: sticky; top: 0; z-index: 30;
+    background: rgba(244,239,228,0.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 16px;
+  }
+  .status-row {
+    max-width: 920px; margin: 0 auto;
+    display: flex; align-items: center; gap: 12px;
+    flex-wrap: wrap; justify-content: space-between;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+  }
+  .status-chip {
+    font-size: 12.5px;
+    color: var(--pine);
+    background: #fffdf8;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 13px;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .status-chip.timer { font-weight: 700; color: var(--pine); border-color: var(--gold-soft); background: #fbf4e2; }
+  .status-chip.timer.low { color: #fff; border-color: var(--bad); background: var(--terracotta); animation: pulseLow 1.4s ease-in-out infinite; }
+  @keyframes pulseLow { 0%,100% { opacity: 1; } 50% { opacity: 0.72; } }
+  .status-chip.switches { color: #7a4a2f; }
+  .nav-links { display: flex; gap: 6px; flex-wrap: wrap; }
+  .nav-links a {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 12.5px; font-weight: 600;
+    text-decoration: none;
+    color: var(--pine);
+    border: 1px solid var(--pine);
+    border-radius: 999px;
+    padding: 5px 12px;
+    transition: all 0.15s ease;
+  }
+  .nav-links a:hover { background: var(--pine); color: #f4efe4; }
+
+  .progress-track {
+    max-width: 920px; margin: 9px auto 0 auto;
+    width: 100%; height: 7px;
+    background: #e3dcc9;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--gold), var(--pine-light)); transition: width 0.4s ease; }
+  .progress-label {
+    max-width: 920px; margin: 5px auto 0 auto;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 11.5px; color: var(--ink-soft); text-align: right;
+  }
+
+  .container { max-width: 920px; margin: 0 auto; padding: 26px 18px 110px 18px; }
+
+  /* ---------- Name box ---------- */
+  .name-box {
+    background: var(--paper-card);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 26px;
+    box-shadow: var(--shadow);
+  }
+  .name-box label {
+    display: block; margin-bottom: 8px; font-weight: 700;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 13px; letter-spacing: 0.3px; color: var(--pine);
+    text-transform: uppercase;
+  }
+  .name-box input {
+    width: 100%; padding: 10px 12px; font-size: 15.5px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    border: 1px solid #c9bfa6; border-radius: 6px; background: #fffefb;
+  }
+  .name-box input:focus { outline: 2px solid var(--gold-soft); border-color: var(--gold); }
+
+  /* ---------- Note / callout ---------- */
+  .note-box {
+    background: #fbf4e2;
+    border: 1px solid var(--gold-soft);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 13px 16px;
+    margin: 6px 0 18px 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 13.5px;
+    color: #5c4a24;
+  }
+
+  /* ---------- Part headers ---------- */
+  .part-header {
+    margin: 44px 0 6px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--pine);
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .part-header h2 {
+    margin: 0; font-size: 21px;
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--pine); letter-spacing: 0.2px;
+  }
+  .part-pending {
+    background: #fbf2df; border: 1px dashed var(--gold);
+    border-radius: 8px; padding: 14px 16px; margin: 10px 0;
+    font-family: 'Inter', sans-serif; font-size: 13.5px; color: #6b552b;
+  }
+
+  .sub-header {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-weight: 700; font-size: 14.5px;
+    color: #fffdf8;
+    background: var(--pine-light);
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin: 26px 0 4px 0;
+  }
+  .sub-instructions {
+    font-family: 'Inter', sans-serif;
+    font-style: italic; font-size: 12.5px;
+    color: var(--ink-soft); margin: 6px 0 14px 0;
+  }
+
+  /* ---------- Question cards ---------- */
+  .card {
+    background: var(--paper-card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 0 rgba(16,54,43,0.03);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover { box-shadow: var(--shadow); border-color: #cbbf9f; }
+  .q-text { font-size: 15.5px; margin-bottom: 10px; }
+  .q-num {
+    font-weight: 700; color: #fff; margin-right: 8px;
+    background: var(--pine); border-radius: 6px;
+    padding: 1px 8px; font-family: 'Inter', sans-serif; font-size: 13px;
+  }
+  .manual-tag {
+    font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 700;
+    color: var(--terracotta); background: #fbe9e4;
+    border-radius: 999px; padding: 2px 8px; margin-left: 6px;
+    vertical-align: middle; letter-spacing: 0.3px;
+  }
+
+  .options-grid { display: grid; gap: 8px; margin-top: 8px; }
+  .option-label {
+    display: flex; align-items: center; gap: 9px;
+    font-size: 14.5px; padding: 9px 12px;
+    border: 1px solid #d8cfb6; border-radius: 8px;
+    background: #fffefb; cursor: pointer;
+    transition: all 0.12s ease;
+  }
+  .option-label:hover { border-color: var(--gold); background: #fbf6e9; }
+  .option-label input { accent-color: var(--pine); width: 15px; height: 15px; }
+  .option-label.correct { background: var(--ok-bg); border-color: var(--ok); }
+  .option-label.incorrect { background: var(--bad-bg); border-color: var(--bad); }
+
+  .text-input {
+    width: 100%; padding: 9px 11px; font-size: 14.5px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    border: 1px solid #c9bfa6; border-radius: 6px; background: #fffefb;
+    margin-top: 4px;
+  }
+  .text-input:focus { outline: 2px solid var(--gold-soft); border-color: var(--gold); }
+  .text-input.correct { background: var(--ok-bg); border-color: var(--ok); }
+  .text-input.incorrect { background: var(--bad-bg); border-color: var(--bad); }
+
+  .inline-blank {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 14.5px;
+    border: none; border-bottom: 2px solid var(--gold);
+    background: #fbf6e9;
+    padding: 2px 6px; margin: 0 2px;
+    min-width: 92px; border-radius: 3px 3px 0 0;
+  }
+  .inline-blank:focus { outline: none; border-bottom-color: var(--pine); background: #fff8e6; }
+  .inline-blank.correct { background: var(--ok-bg); border-bottom-color: var(--ok); }
+  .inline-blank.incorrect { background: var(--bad-bg); border-bottom-color: var(--bad); }
+  select.inline-blank { min-width: 240px; }
+
+  .passage-box {
+    font-size: 15.5px;
+    background: #fffefb;
+    line-height: 1.85;
+  }
+  .passage-box strong { color: var(--pine); }
+
+  .essay-area {
+    width: 100%; min-height: 210px; padding: 12px 14px; font-size: 15px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    border: 1px solid #c9bfa6; border-radius: 8px; background: #fffefb;
+    resize: vertical; margin-top: 6px; line-height: 1.75;
+  }
+  .essay-area:focus { outline: 2px solid var(--gold-soft); border-color: var(--gold); }
+  .essay-meta {
+    font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-soft);
+    margin-top: 6px; text-align: right;
+  }
+  .essay-meta.over-under { color: var(--terracotta); font-weight: 600; }
+
+  /* ---------- Score box ---------- */
+  .score-box {
+    display: none; margin-top: 34px;
+    background: linear-gradient(160deg, #10362b, #0c2a21);
+    color: #f4efe4;
+    border-radius: 12px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+  }
+  .score-box p { margin: 6px 0; font-family: 'Inter', sans-serif; font-size: 14px; }
+  .score-box strong { color: var(--gold-soft); font-size: 17px; }
+
+  /* ---------- Footer bar ---------- */
+  .footer-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
+    background: rgba(244,239,228,0.96);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid var(--line);
+    padding: 12px 16px;
+    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+  }
+  .footer-bar button {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-weight: 700; font-size: 13.5px;
+    border-radius: 999px; padding: 11px 22px;
+    border: none; cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.15s ease;
+  }
+  .footer-bar button:active { transform: scale(0.97); }
+  .btn-submit { background: var(--pine); color: #f4efe4; }
+  .btn-submit:hover { background: var(--pine-light); }
+  .btn-submit:disabled { background: #b7c4bd; cursor: not-allowed; }
+  .btn-secondary { background: #e5ddc9; color: #4b3f26; }
+  .btn-secondary:hover { background: #d9cfb3; }
+
+  #emailStatus {
+    position: fixed; bottom: 66px; left: 50%; transform: translateX(-50%);
+    z-index: 41; display: none;
+    font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+    background: #fffefb; border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 16px; box-shadow: var(--shadow);
+  }
+
+  /* ---------- Modals ---------- */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 80;
+    background: rgba(12,26,20,0.55);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-box {
+    background: var(--paper-card);
+    border-radius: 12px; max-width: 440px; width: 100%;
+    padding: 26px 26px 22px 26px;
+    box-shadow: 0 24px 60px -18px rgba(0,0,0,0.45);
+    border-top: 4px solid var(--gold);
+  }
+  .modal-box h3 {
+    margin: 0 0 8px 0; font-family: 'Playfair Display', Georgia, serif;
+    color: var(--pine); font-size: 20px;
+  }
+  .modal-box p { font-size: 14px; color: var(--ink-soft); margin: 0 0 14px 0; }
+  .modal-error {
+    display: none; color: var(--bad); font-family: 'Inter', sans-serif;
+    font-size: 12.5px; font-weight: 600; margin-bottom: 10px;
+  }
+  .modal-box input[type="password"] {
+    width: 100%; padding: 10px 12px; font-size: 15px;
+    border: 1px solid #c9bfa6; border-radius: 6px; background: #fffefb;
+    font-family: 'Inter', sans-serif;
+  }
+  .modal-actions { display: flex; gap: 10px; margin-top: 18px; justify-content: flex-end; }
+  .modal-actions button {
+    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px;
+    border: none; border-radius: 999px; padding: 9px 18px; cursor: pointer;
+  }
+  .modal-list {
+    max-height: 160px; overflow-y: auto; font-family: 'Inter', sans-serif;
+    font-size: 13px; background: #fbf4e2; border-radius: 8px; padding: 10px 12px;
+    border: 1px solid var(--gold-soft); line-height: 1.9;
+  }
+
+  .copy-toast {
+    position: fixed; bottom: 68px; left: 50%; transform: translateX(-50%);
+    background: var(--pine); color: #f4efe4; font-family: 'Inter', sans-serif;
+    font-size: 12.5px; padding: 9px 18px;
+    border-radius: 999px; opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+    z-index: 60;
+  }
+  .copy-toast.show { opacity: 0.95; }
+
+  /* ---------- Listening player ---------- */
+  .listening-card {
+    background: linear-gradient(165deg, #fffdf8 0%, #f2ecda 100%);
+    border: 1px solid var(--gold-soft);
+    border-left: 4px solid var(--pine);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 10px 0 18px 0;
+    box-shadow: var(--shadow);
+  }
+  .listening-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+  .listening-icon { font-size: 22px; line-height: 1; }
+  .listening-title {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-weight: 700; font-size: 15px; color: var(--pine);
+  }
+  .listening-sub {
+    font-family: 'Inter', sans-serif; font-size: 12px;
+    color: var(--ink-soft); margin-top: 3px; font-style: italic;
+  }
+  .yt-wrap { width: 0; height: 0; overflow: hidden; position: absolute; left: -9999px; }
+  .listening-controls { display: flex; flex-direction: column; gap: 8px; }
+  .listen-btn {
+    align-self: flex-start;
+    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13.5px;
+    border: none; border-radius: 999px; padding: 10px 20px; cursor: pointer;
+    background: var(--pine); color: #f4efe4;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  .listen-btn:hover:not(:disabled) { background: var(--pine-light); }
+  .listen-btn:active:not(:disabled) { transform: scale(0.97); }
+  .listen-btn:disabled { background: #c9c2ac; color: #7a7460; cursor: not-allowed; }
+  .listen-progress {
+    width: 100%; height: 8px; border-radius: 6px;
+    background: #e3dcc9; border: 1px solid var(--line); overflow: hidden;
+    pointer-events: none; /* purely visual - no seeking */
+  }
+  .listen-progress-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, var(--gold), var(--pine-light));
+    transition: width 0.25s linear;
+  }
+  .listen-status {
+    font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-soft);
+  }
+  .listen-status.warn { color: var(--terracotta); font-weight: 600; }
+
+  /* ---------- Intro / guidance box ---------- */
+  .guide-box {
+    background: linear-gradient(165deg, #fffdf8 0%, #fbf4e2 100%);
+    border: 1px solid var(--gold-soft);
+    border-left: 4px solid var(--pine);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow);
+  }
+  .guide-box h3 {
+    margin: 0 0 10px 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--pine); font-size: 18px;
+  }
+  .guide-box ul { margin: 0; padding-left: 20px; }
+  .guide-box li {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 13.5px; color: var(--ink-soft);
+    margin-bottom: 7px; line-height: 1.6;
+  }
+  .guide-box li strong { color: var(--pine); }
+  .guide-wish {
+    margin-top: 12px; padding-top: 12px;
+    border-top: 1px dashed var(--gold-soft);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15px; color: var(--pine); font-weight: 700; text-align: center;
+  }
+
+  .open-question-card {
+    background: linear-gradient(165deg, #fffdf8 0%, #fbf4e2 100%);
+    border: 1px solid var(--gold-soft);
+    border-top: 4px solid var(--gold);
+  }
+  .open-question-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px; color: var(--pine); margin-bottom: 10px;
+  }
+
+  /* ---------- Vocabulary highlighting ---------- */
+  /* Selection needs to stay enabled inside question / passage cards so
+     students can select a word to underline, even while exam-active
+     otherwise disables text selection everywhere else. */
+  body.exam-active .card, body.exam-active .card *,
+  body.exam-active .passage-box, body.exam-active .passage-box * {
+    user-select: text; -webkit-user-select: text;
+  }
+
+  .highlight-popup-btn {
+    display: none; position: absolute; z-index: 70;
+    background: var(--pine); color: #f4efe4; border: none;
+    border-radius: 999px; padding: 8px 15px;
+    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12.5px;
+    cursor: pointer; box-shadow: var(--shadow);
+  }
+  .highlight-popup-btn:hover { background: var(--pine-light); }
+
+  .vocab-underline {
+    text-decoration: underline; text-decoration-color: var(--terracotta);
+    text-decoration-thickness: 2px; text-underline-offset: 3px;
+    background: rgba(168,73,47,0.08); border-radius: 3px;
+    cursor: pointer; padding: 0 1px;
+  }
+
+  /* ---------- New sections: section title / sub, vocab list, flag grid ---------- */
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--pine); font-size: 18px; margin-bottom: 6px;
+  }
+  .section-sub {
+    font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--ink-soft); margin-bottom: 14px; line-height: 1.6;
+  }
+
+  .vocab-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .vocab-empty {
+    font-family: 'Inter', sans-serif; font-size: 12.5px;
+    color: var(--ink-soft); font-style: italic;
+  }
+  .vocab-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #fbf4e2; border: 1px solid var(--gold-soft);
+    border-radius: 999px; padding: 5px 6px 5px 13px;
+    font-family: 'Source Serif 4', Georgia, serif; font-size: 14px; color: #5c4a24;
+    text-decoration: underline; text-decoration-color: var(--terracotta);
+    text-underline-offset: 3px;
+  }
+  .vocab-chip-remove {
+    border: none; background: transparent; color: var(--terracotta);
+    font-size: 16px; font-weight: 700; cursor: pointer; line-height: 1;
+    padding: 2px 5px; font-family: 'Inter', sans-serif;
+  }
+
+  .flag-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .flag-chip {
+    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px;
+    min-width: 38px; height: 38px; padding: 0 4px; border-radius: 8px;
+    border: 1px solid #d8cfb6; background: #fffefb; color: var(--pine);
+    cursor: pointer; transition: all 0.12s ease;
+  }
+  .flag-chip:hover { border-color: var(--gold); background: #fbf6e9; }
+  .flag-chip.flagged { background: var(--terracotta); border-color: var(--terracotta); color: #fff; }
+  .flag-chip:disabled { cursor: not-allowed; opacity: 0.7; }
+
+  .future-label {
+    display: block; font-family: 'Inter', sans-serif; font-weight: 600;
+    font-size: 13.5px; color: var(--pine); margin-bottom: 6px;
+  }
+
+  @media (max-width: 600px) {
+    .top-bar h1 { font-size: 23px; }
+    .status-row { gap: 8px; }
+    .container { padding: 20px 12px 120px 12px; }
+    .modal-box { padding: 20px 18px; }
+  }
+
+  /* ==========================================================
+     Alternate color themes.
+     Nearly every rule above reads from CSS variables, so
+     swapping the palette on <body> re-skins the whole site
+     without touching existing rules. Palettes are kept muted /
+     low-saturation on purpose so they stay easy on the eyes for
+     long practice sessions (no neon or high-contrast colors).
+  ========================================================== */
+  /* ---------- "Xanh Trầm" - muted slate blue ---------- */
+  body.theme-slate {
+    --ink: #263341;
+    --ink-soft: #67757f;
+    --paper: #f3f6f8;
+    --paper-card: #ffffff;
+    --line: #dde4ea;
+    --pine: #3f5b73;
+    --pine-light: #4e6d87;
+    --gold: #b98a52;
+    --gold-soft: #e6ecf1;
+    --terracotta: #b3684f;
+    --ok: #4c8c6b;
+    --ok-bg: #e7f3ee;
+    --bad: #b3564a;
+    --bad-bg: #f9eae7;
+    --shadow: 0 10px 30px -14px rgba(63,91,115,0.22);
+  }
+  body.theme-slate { background-image: none; }
+  body.theme-slate .top-bar { background: linear-gradient(155deg, var(--pine) 0%, #253947 100%); }
+  body.theme-slate .status-bar,
+  body.theme-slate .footer-bar { background: rgba(243,246,248,0.94); }
+
+  /* ---------- "Nâu Ấm" - warm latte / sepia ---------- */
+  body.theme-latte {
+    --ink: #3d322a;
+    --ink-soft: #8a7768;
+    --paper: #faf6f0;
+    --paper-card: #fffdfa;
+    --line: #e9ddd0;
+    --pine: #8a5a3c;
+    --pine-light: #9c6b4a;
+    --gold: #c99a53;
+    --gold-soft: #f1e3cd;
+    --terracotta: #b25b45;
+    --ok: #6b8f5c;
+    --ok-bg: #eef4e9;
+    --bad: #b2554a;
+    --bad-bg: #fbebe7;
+    --shadow: 0 10px 30px -14px rgba(138,90,60,0.22);
+  }
+  body.theme-latte { background-image: none; }
+  body.theme-latte .top-bar { background: linear-gradient(155deg, var(--pine) 0%, #5f3c26 100%); }
+  body.theme-latte .status-bar,
+  body.theme-latte .footer-bar { background: rgba(250,246,240,0.94); }
+
+  /* ---------- "Rừng Xanh" - muted sage green ---------- */
+  body.theme-sage {
+    --ink: #263129;
+    --ink-soft: #6a7b71;
+    --paper: #f3f6f3;
+    --paper-card: #ffffff;
+    --line: #dde5dd;
+    --pine: #4c6c54;
+    --pine-light: #5a7c62;
+    --gold: #af8a52;
+    --gold-soft: #e7ebe1;
+    --terracotta: #af6b4d;
+    --ok: #4b7a5a;
+    --ok-bg: #e7f1e9;
+    --bad: #af594d;
+    --bad-bg: #f8eae7;
+    --shadow: 0 10px 30px -14px rgba(76,108,84,0.22);
+  }
+  body.theme-sage { background-image: none; }
+  body.theme-sage .top-bar { background: linear-gradient(155deg, var(--pine) 0%, #253a2b 100%); }
+  body.theme-sage .status-bar,
+  body.theme-sage .footer-bar { background: rgba(243,246,243,0.94); }
+
+  /* ---------- Theme picker dropdown ---------- */
+  .theme-select {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 12.5px; font-weight: 600;
+    border-radius: 999px;
+    border: 1px solid rgba(244,239,228,0.35);
+    background: rgba(244,239,228,0.14);
+    color: #f4efe4;
+    padding: 7px 10px;
+    cursor: pointer; outline: none;
+    height: 34px;
+    transition: background 0.15s ease;
+  }
+  .theme-select:hover { background: rgba(244,239,228,0.28); }
+  .theme-select option { color: #16241f; }
+
+  /* ---------- Results review panel (shown after submission) ---------- */
+  .review-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+  .review-chip {
+    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px;
+    min-width: 46px; height: 36px; padding: 0 10px; border-radius: 8px;
+    cursor: pointer; transition: transform 0.1s ease, box-shadow 0.15s ease;
+  }
+  .review-chip:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .review-chip.correct { background: var(--ok-bg); border: 1px solid var(--ok); color: var(--ok); }
+  .review-chip.incorrect { background: var(--bad-bg); border: 1px solid var(--bad); color: var(--bad); }
+  .review-legend {
+    font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-soft);
+    margin-top: 10px; display: flex; gap: 16px; flex-wrap: wrap;
+  }
+  .review-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .review-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .review-dot.correct { background: var(--ok); }
+  .review-dot.incorrect { background: var(--bad); }
+
+  /* ---------- Required-field error state ---------- */
+  .name-box.field-error input { border-color: var(--bad); }
+  .name-box .field-error-msg {
+    display: none; color: var(--bad); font-family: 'Inter', sans-serif;
+    font-size: 12.5px; font-weight: 600; margin-top: 8px;
+  }
+  .name-box.field-error .field-error-msg { display: block; }
+
+  .top-bar-tools {
+    position: absolute; top: 14px; right: 16px;
+    display: flex; gap: 8px; z-index: 5;
+  }
+  .top-bar { position: relative; }
+  .icon-btn {
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 1px solid rgba(244,239,228,0.35);
+    background: rgba(244,239,228,0.12);
+    color: #f4efe4; font-size: 15px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  .icon-btn:hover { background: rgba(244,239,228,0.28); }
+  .icon-btn:active { transform: scale(0.93); }
+
+  /* ---------- Shimmer progress bar ---------- */
+  .progress-fill {
+    background: linear-gradient(90deg, var(--gold), var(--pine-light), var(--ok), var(--gold));
+    background-size: 300% 100%;
+    animation: progressShimmer 3.2s linear infinite;
+  }
+  @keyframes progressShimmer {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 300% 0%; }
+  }
+
+  /* ---------- Mascot ---------- */
+  .mascot {
+    font-size: 19px; line-height: 1; display: inline-block;
+    animation: mascotBounce 1.7s ease-in-out infinite;
+  }
+  @keyframes mascotBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+
+  /* ---------- Streak badge ---------- */
+  .status-chip.streak {
+    color: #fff; background: var(--terracotta); border-color: var(--terracotta);
+    animation: streakPulse 1.1s ease-in-out infinite;
+  }
+  @keyframes streakPulse {
+    0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); }
+  }
+
+  /* ---------- What's new callout ---------- */
+  .whats-new {
+    margin-top: 14px; padding-top: 12px;
+    border-top: 1px dashed var(--gold-soft);
+  }
+  .whats-new-title {
+    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12.5px;
+    letter-spacing: 0.3px; color: var(--pine); margin-bottom: 8px;
+  }
+  .whats-new-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 12px;
+  }
+  .whats-new-grid span {
+    font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink-soft);
+    background: #fffefb; border: 1px solid var(--gold-soft);
+    border-radius: 8px; padding: 6px 9px;
+  }
+  @media (max-width: 480px) { .whats-new-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- Elimination tool (right-click / double-tap an option) ---------- */
+  .option-label.eliminated {
+    text-decoration: line-through; opacity: 0.45;
+  }
+  .option-label.eliminated:hover { opacity: 0.6; }
+
+  /* ---------- Vocabulary tooltip (Phần II) ---------- */
+  .vocab-term {
+    border-bottom: 2px dashed var(--gold);
+    font-weight: 600; color: var(--pine); cursor: help;
+    position: relative; padding: 0 1px;
+  }
+  .vocab-term::after {
+    content: attr(data-tooltip);
+    position: absolute; left: 50%; bottom: 135%; transform: translateX(-50%);
+    background: var(--pine); color: #f4efe4;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500;
+    padding: 6px 10px; border-radius: 8px; white-space: normal;
+    width: max-content; max-width: 220px; text-align: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.15s ease;
+    box-shadow: var(--shadow); z-index: 55;
+  }
+  .vocab-term:hover::after, .vocab-term.tt-active::after { opacity: 1; }
+  .vocab-mini-title, .notes-mini-title {
+    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 11.5px;
+    letter-spacing: 0.3px; text-transform: uppercase; color: var(--pine);
+    margin: 14px 0 6px 0;
+  }
+  .vocab-mini-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5px 14px;
+    font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--ink-soft);
+    background: #fbf4e2; border: 1px solid var(--gold-soft); border-radius: 8px;
+    padding: 10px 12px; margin-bottom: 10px;
+  }
+  .notes-mini-list {
+    margin: 0 0 4px 20px; padding: 0;
+    font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--ink-soft);
+  }
+  .notes-mini-list li { margin-bottom: 4px; line-height: 1.6; }
+  .prompt-vi { color: var(--ink-soft); font-style: italic; }
+  .prompt-sub { margin: 6px 0 6px 20px; }
+  @media (max-width: 480px) { .vocab-mini-grid { grid-template-columns: 1fr; } }
+
+  @media (max-width: 600px) {
+    .top-bar-tools { top: 10px; right: 10px; }
+    .icon-btn { width: 30px; height: 30px; font-size: 13px; }
+  }
+
+
+  /* ---------- Matching / error-fix / answer key ---------- */
+  .match-col-title {
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase; color: var(--pine);
+    margin: 4px 0 6px 0;
+  }
+  .match-list { list-style: none; margin: 0 0 16px 0; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; background: #fbf6e9; }
+  .match-list li { margin: 2px 0; font-size: 14.5px; line-height: 1.6; }
+  .match-row { margin: 8px 0; }
+  .match-row select.inline-blank { width: 100%; max-width: 100%; margin: 6px 0 0 0; min-width: 0; }
+  .fix-row { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line); font-size: 14.5px; }
+  .fix-row select.inline-blank { min-width: 150px; max-width: 100%; }
+  .passage-box u { text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  .key-group {
+    font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px;
+    color: #fffdf8; background: var(--pine-light); display: inline-block;
+    padding: 5px 13px; border-radius: 999px; margin: 18px 0 8px 0;
+  }
+  .key-item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; line-height: 1.65; }
+  .key-item:last-child { border-bottom: none; }
+  .key-num {
+    flex: 0 0 auto; font-weight: 700; color: #fff; background: var(--pine);
+    border-radius: 6px; padding: 1px 8px; font-family: 'Inter', sans-serif; font-size: 13px; margin-top: 2px;
+  }
+  .key-body strong { color: var(--pine); }
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-tools">
+    <select class="theme-select" id="themeSelect" title="Đổi giao diện website">
+      <option value="classic">🎨 Cổ điển</option>
+      <option value="slate">🌫️ Xanh Trầm</option>
+      <option value="latte">☕ Nâu Ấm</option>
+      <option value="sage">🌿 Rừng Xanh</option>
+    </select>
+    <button type="button" class="icon-btn" id="muteToggleBtn" title="Tắt / bật âm thanh">🔊</button>
+  </div>
+  <p class="eyebrow">Advanced English &middot; Bài tập về nhà</p>
+  <h1>Buổi 39 &middot; So Sánh Nâng Cao</h1>
+  <p>Advanced Comparison &middot; Matching &middot; Multiple Choice &middot; Error Identification &middot; Sentence Transformation &middot; Không giới hạn thời gian làm bài</p>
+  <div class="divider-orn"></div>
+</div>
+
+<div class="status-bar">
+  <div class="status-row">
+    <div class="nav-links" id="navLinks"></div>
+    <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+      <span class="mascot" id="mascotEl" title="Bạn đồng hành nhỏ theo dõi tiến độ của em">😴</span>
+      <span class="status-chip streak" id="streakChip" style="display:none;">🔥 Streak: 0</span>
+      <span class="status-chip timer" id="timerChip" title="Thời gian đã làm bài - không giới hạn">⏱ 00:00</span>
+      <span class="status-chip switches" id="switchChip">Rời khỏi trang: 0 lần</span>
+    </div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-label" id="progressLabel">0 câu đã trả lời</div>
+</div>
+
+<div class="container">
+
+  <div class="guide-box">
+    <h3>Trước khi bắt đầu</h3>
+    <ul>
+      <li>Bài <strong>không giới hạn thời gian</strong> làm bài, các em cứ yên tâm làm thật kỹ, không cần vội. Bài cũng được tự động lưu trên máy, lỡ tay tắt thì vào lại link làm tiếp bình thường nha.</li>
+      <li><strong>Bắt buộc ghi họ tên</strong> ở ô bên dưới trước khi nộp bài - hệ thống sẽ nhắc nếu em quên.</li>
+      <li>Gặp từ nào chưa chắc nghĩa, em <strong>bôi đen từ đó</strong> và bấm nút hiện ra để gạch chân đánh dấu lại để buổi sau anh chữa kỹ hơn nha.</li>
+      <li>Với câu trắc nghiệm, em <strong>bấm chuột phải</strong> (máy tính) hoặc <strong>chạm hai lần liên tiếp</strong> (điện thoại) vào đáp án em muốn loại để gạch nó đi, đỡ phải nhớ trong đầu là mình đã loại đáp án nào rồi.</li>
+      <li>Sau khi <strong>nộp bài</strong>, các câu Phần I, II &amp; III được tự động chấm sẽ hiện rõ <strong>đúng (xanh) / sai (đỏ)</strong> ngay trên bài làm, kèm một bảng tổng hợp để em bấm vào xem lại từng câu sai. Ở Phần III, mỗi câu gồm hai ô: chọn phần sai (A, B, C, D) và viết lại dạng đúng, nên sẽ được tính thành hai ý (a, b). Phần IV (Sentence Transformation) do có nhiều cách diễn đạt đúng nên anh/chị sẽ chấm tay.</li>
+      <li>Ngay sau khi nộp bài, <strong>đáp án và giải thích chi tiết</strong> của cả 30 câu sẽ hiện ra bên dưới phần điểm để em đối chiếu và tự sửa lại những chỗ còn sai.</li>
+      <li>Cuối bài có mục để em <strong>đánh dấu câu muốn xem lại</strong> và chia sẻ điều em muốn học thêm (hãy giúp anh cải thiện nền tảng này).</li>
+      <li>Bấm <strong>"Nộp bài"</strong> để gửi kết quả trực tiếp cho anh nha, và đừng quên ghi tên.</li>
+    </ul>
+    <div class="whats-new">
+      <div class="whats-new-title">🆕 Điểm nổi bật của bài luyện tập này</div>
+      <div class="whats-new-grid">
+        <span>⏳ Không giới hạn thời gian làm bài</span>
+        <span>✅ Xem chi tiết đúng/sai sau khi nộp</span>
+        <span>🎨 3 giao diện màu dịu mắt để lựa chọn</span>
+        <span>✂️ Công cụ gạch bỏ đáp án sai</span>
+        <span>📝 Bắt buộc ghi tên trước khi nộp bài</span>
+        <span>🔊 Âm thanh nhẹ khi làm bài</span>
+        <span>📖 Đáp án và giải thích chi tiết sau khi nộp bài</span>
+      </div>
+    </div>
+    <div class="guide-wish">Chúc em làm bài thật tốt (vì kết quả sẽ được tổng hợp và gửi lại cho Phụ huynh nên làm nghiêm túc nha mấy đứa)! 🍀</div>
+  </div>
+
+  <div class="name-box" id="nameBox">
+    <label for="studentName">Họ và tên học sinh <span style="color:var(--bad);">*</span></label>
+    <input type="text" id="studentName" class="text-input" placeholder="Nhập họ tên đầy đủ" style="margin-top:0;" required>
+    <div class="sub-instructions" style="margin:8px 0 0 0;">nhớ ghi tên nha các em (bruh) - bắt buộc trước khi nộp bài.</div>
+    <div class="field-error-msg" id="nameError">gHi TêN đI cÁc eM</div>
+  </div>
+
+  <div id="examArea"></div>
+
+  <div class="part-header"><h2>Trước khi nộp bài</h2></div>
+
+  <div class="card" id="resultsReviewCard" style="display:none;">
+    <div class="section-title">📊 Chi tiết đúng / sai</div>
+    <div class="section-sub">Danh sách các câu Phần I, II &amp; III được chấm tự động. Bấm vào một ô để cuộn tới câu đó và xem lại.</div>
+    <div class="review-grid" id="resultsReview"></div>
+    <div class="review-legend">
+      <span><span class="review-dot correct"></span> Trả lời đúng</span>
+      <span><span class="review-dot incorrect"></span> Trả lời sai / bỏ trống</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">📝 Từ vựng em đã đánh dấu</div>
+    <div class="section-sub">Bôi đen (chọn) một từ hoặc cụm từ bất kỳ trong đề bài, rồi bấm nút "Gạch chân từ này" hiện lên để đánh dấu từ em chưa chắc nghĩa. Bấm lại vào từ đã gạch chân (hoặc dấu × trên chip) để bỏ đánh dấu. Danh sách này sẽ được gửi kèm cho anh/chị.</div>
+    <div class="vocab-list" id="vocabList"></div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">🚩 Đánh dấu câu cần xem lại</div>
+    <div class="section-sub">Bấm vào số câu bên dưới nếu em muốn anh/chị xem lại hoặc chưa chắc chắn với câu đó khi chữa bài.</div>
+    <div class="flag-grid" id="flagGrid"></div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">💡 Một chút chia sẻ thêm</div>
+    <label class="future-label" for="futureTopics">Em có tò mò hoặc muốn tìm hiểu thêm về chủ đề nào trong các buổi học sắp tới không?</label>
+    <textarea class="essay-area" id="futureTopics" placeholder="Ví dụ: em muốn học thêm về... (không bắt buộc)" style="min-height:100px;"></textarea>
+    <label class="future-label" for="featureSuggestions" style="margin-top:16px;">Em có muốn đề xuất thêm tính năng nào cho nền tảng luyện tập này không? (hoặc: Bài hôm trước có phần nào em chưa hiểu rõ/em có muốn luyện thêm bài dạng nào không?)</label>
+    <textarea class="essay-area" id="featureSuggestions" placeholder="Ví dụ: em muốn có thêm... (không bắt buộc)" style="min-height:100px;"></textarea>
+  </div>
+
+  <div class="card" id="answerKeyCard" style="display:none;">
+    <div class="section-title">📖 Đáp án và giải thích chi tiết</div>
+    <div class="section-sub">Đối chiếu với bài làm của em. Ở Phần III, đáp án gồm phần sai (a) và dạng sửa lại (b). Phần IV có thể có cách viết khác vẫn đúng, anh/chị sẽ chấm riêng.</div>
+    <div class="key-list"><div class="key-group">DẠNG 1. MATCHING</div><div class="key-item"><span class="key-num">1</span><div class="key-body"><strong>D</strong> volatile = dễ biến động, thất thường, có thể đổi chiều đột ngột, thường theo hướng xấu (a volatile economy).</div></div><div class="key-item"><span class="key-num">2</span><div class="key-body"><strong>A</strong> ulterior = ẩn giấu, không nói rõ ra. Hay gặp nhất trong cụm ulterior motives (động cơ thầm kín).</div></div><div class="key-item"><span class="key-num">3</span><div class="key-body"><strong>E</strong> aloof = xa cách, lạnh nhạt, không hòa nhập với người xung quanh.</div></div><div class="key-item"><span class="key-num">4</span><div class="key-body"><strong>B</strong> tedious = tẻ nhạt, chán ngắt vì kéo dài quá lâu.</div></div><div class="key-item"><span class="key-num">5</span><div class="key-body"><strong>C</strong> unprecedented = chưa từng có tiền lệ.</div></div><div class="key-group">DẠNG 2. MULTIPLE CHOICE</div><div class="key-item"><span class="key-num">6</span><div class="key-body"><strong>B. latter</strong> Đề nói đến <em>two</em> proposed strategies, nên dùng the former (cái được nhắc trước) và the latter (cái được nhắc sau). Last và latest dùng khi có từ ba đối tượng trở lên hoặc mang nghĩa &quot;mới nhất&quot;, còn later chỉ thời gian.</div></div><div class="key-item"><span class="key-num">7</span><div class="key-body"><strong>B. to / by</strong> Các tính từ gốc Latin như senior, junior, superior, inferior, prior đi với <em>to</em>, không đi với than. Mức chênh lệch được nối bằng <em>by</em>: senior to sb by three years.</div></div><div class="key-item"><span class="key-num">8</span><div class="key-body"><strong>B. strict</strong> So sánh hai phẩm chất của cùng một người dùng cấu trúc more + Adj1 + than + Adj2, giữ nguyên dạng gốc của Adj1 (more strict than harsh), không thêm đuôi -er.</div></div><div class="key-item"><span class="key-num">9</span><div class="key-body"><strong>B. aloof</strong> Trước chỗ trống đã có sẵn <em>more</em> nên chỉ điền tính từ nguyên mẫu. Aloof (tính từ bắt đầu bằng a-, thường làm vị ngữ) khi so sánh hơn dùng more aloof, không dùng aloofer. Chọn D sẽ thành &quot;more more aloof&quot;.</div></div><div class="key-item"><span class="key-num">10</span><div class="key-body"><strong>B. further</strong> Further notice = thông báo thêm, mang nghĩa trừu tượng. Farther chủ yếu dùng cho khoảng cách vật lý đo được.</div></div><div class="key-item"><span class="key-num">11</span><div class="key-body"><strong>A. hardest-working</strong> Tính từ ghép dạng tính từ ngắn + V-ing (hard-working) biến đổi ở thành phần đầu khi so sánh: harder-working, hardest-working. Có <em>by far the</em> nên cần dạng so sánh nhất.</div></div><div class="key-item"><span class="key-num">12</span><div class="key-body"><strong>B. in / to</strong> Inferior in quality (kém hơn về chất lượng), inferior <em>to</em> sth (không dùng than). Prior <em>to</em> = trước khi.</div></div><div class="key-item"><span class="key-num">13</span><div class="key-body"><strong>C. more swiftly</strong> Swiftly là trạng từ đuôi -ly nên so sánh hơn dùng more swiftly (không có swiftlier). Cụm <em>than any of its rivals</em> cho thấy đây là câu so sánh.</div></div><div class="key-item"><span class="key-num">14</span><div class="key-body"><strong>A. prompt / grim</strong> Chỗ trống thứ nhất cần tính từ nguyên mẫu prompt bổ nghĩa cho intervention. Chỗ trống thứ hai đứng sau increasingly (đã mang nghĩa &quot;ngày càng&quot;) nên chỉ cần tính từ gốc grim, không thêm -er.</div></div><div class="key-item"><span class="key-num">15</span><div class="key-body"><strong>A. nerve-racking / subtler</strong> Nerve-racking (gây căng thẳng) mô tả sự việc, còn nerve-racked mô tả người bị căng thẳng. Subtle là tính từ hai âm tiết tận cùng -le nên so sánh hơn là subtler (far subtler tactic).</div></div><div class="key-group">DẠNG 3. ERROR IDENTIFICATION</div><div class="key-item"><span class="key-num">16</span><div class="key-body"><strong>B. farther &rarr; further</strong> Data ở đây mang nghĩa trừu tượng (thêm dữ liệu), nên dùng further. Farther dành cho khoảng cách vật lý.</div></div><div class="key-item"><span class="key-num">17</span><div class="key-body"><strong>B. tireder &rarr; more tired</strong> Tính từ có đuôi -ed (tired) không thêm -er mà dùng more khi so sánh: more tired.</div></div><div class="key-item"><span class="key-num">18</span><div class="key-body"><strong>B. elder &rarr; older</strong> Elder chỉ đứng trước danh từ để nói về thứ bậc anh chị em (my elder brother). Khi so sánh tuổi trực tiếp với than thì phải dùng older than.</div></div><div class="key-item"><span class="key-num">19</span><div class="key-body"><strong>A. smooth &rarr; smoothly (more smoothly)</strong> Process là động từ nên cần trạng từ bổ nghĩa. Dạng so sánh hơn là more smoothly, song song với meticulously ở phía sau.</div></div><div class="key-item"><span class="key-num">20</span><div class="key-body"><strong>B. more superior &rarr; superior</strong> Superior vốn đã mang nghĩa so sánh (đi với to), nên không thêm more hoặc most phía trước.</div></div><div class="key-group">DẠNG 4. SENTENCE TRANSFORMATION</div><div class="key-item"><span class="key-num">21</span><div class="key-body"><strong>The director's debut movie is far more captivating than the sequel.</strong> Nowhere near as ... as = far more ... than, đảo vai trò hai đối tượng.</div></div><div class="key-item"><span class="key-num">22</span><div class="key-body"><strong>The first painting is just as valuable as the second (one).</strong> Equally valuable = just as valuable as.</div></div><div class="key-item"><span class="key-num">23</span><div class="key-body"><strong>Henry's younger cousin drives much more recklessly than Henry (does).</strong> Not nearly as ... as = much more ... than, đảo chủ ngữ. Trạng từ recklessly dùng more.</div></div><div class="key-item"><span class="key-num">24</span><div class="key-body"><strong>Kevin is by far the fastest athlete in our track club.</strong> No other ... as fast as = so sánh nhất. By far đứng trước the + dạng so sánh nhất.</div></div><div class="key-item"><span class="key-num">25</span><div class="key-body"><strong>The first laptop model is slightly more expensive than the second (one).</strong> Slightly đứng trước dạng so sánh hơn để chỉ mức chênh lệch nhỏ.</div></div><div class="key-item"><span class="key-num">26</span><div class="key-body"><strong>She felt more sad than angry when she left the room.</strong> So sánh hai tính chất của cùng một người: more + Adj1 + than + Adj2, giữ nguyên sad, không chia sadder.</div></div><div class="key-item"><span class="key-num">27</span><div class="key-body"><strong>She was appointed to the board because she was senior to him by three years in executive service.</strong> Senior to sb by + khoảng thời gian.</div></div><div class="key-item"><span class="key-num">28</span><div class="key-body"><strong>Without prompt action, the company will face an extremely grim future.</strong> If we do not ... = Without + danh từ. Immediate action = prompt action.</div></div><div class="key-item"><span class="key-num">29</span><div class="key-body"><strong>Auditing the financial statements was far more time-consuming and (far more) stressful than the department had expected.</strong> Far đứng trước dạng so sánh hơn. Time-consuming (tính từ ghép V-ing) so sánh bằng more.</div></div><div class="key-item"><span class="key-num">30</span><div class="key-body"><strong>... whereas the latter employs statistical modeling.</strong> Hai đối tượng: the former (cái trước) và the latter (cái sau).</div></div></div>
+  </div>
+
+  <div class="score-box" id="scoreBox"></div>
+
+</div>
+
+<div class="footer-bar">
+  <button class="btn-submit" id="submitBtn">Nộp bài</button>
+</div>
+<div id="emailStatus"></div>
+
+<div class="modal-overlay" id="confirmOverlay">
+  <div class="modal-box">
+    <h3 id="confirmTitle">Bạn còn câu chưa trả lời</h3>
+    <p id="confirmText">Danh sách các câu chưa trả lời:</p>
+    <div class="modal-list" id="unansweredList"></div>
+    <div class="modal-actions">
+      <button class="btn-secondary" id="backToExam">Quay lại làm bài</button>
+      <button class="btn-submit" id="confirmSubmitAnyway">Vẫn nộp bài</button>
+    </div>
+  </div>
+</div>
+
+<div class="copy-toast" id="copyToast">Chức năng sao chép đã được tắt trong khi làm bài</div>
+
+<script id="examDataJson" type="application/json">{"examTitle": "ADVANCED ENGLISH – BÀI TẬP VỀ NHÀ BUỔI 39 (ADVANCED COMPARISON)", "parts": [{"id": "A", "label": "PHẦN I &middot; MATCHING", "pending": false, "blocks": [{"type": "subheader", "title": "PHẦN I. MATCHING (5 câu)", "instructions": "Match the word in Column A with its correct definition or synonym in Column B."}, {"type": "clozePassage", "html": "<div class=\"match-col-title\">Column B<\/div><ul class=\"match-list\"><li><strong>A.<\/strong> Hidden, secret, not clearly stated or revealed.<\/li><li><strong>B.<\/strong> Extremely boring and dull because of taking too long.<\/li><li><strong>C.<\/strong> Never done, known, or experienced before.<\/li><li><strong>D.<\/strong> Likely to change suddenly and unexpectedly, especially for the worse.<\/li><li><strong>E.<\/strong> Cool, distant, and uninvolved in social interactions.<\/li><\/ul><div class=\"match-col-title\">Column A<\/div><div class=\"match-row\" id=\"q_A_1\"><span class=\"q-num\">1<\/span> <strong>volatile<\/strong> &rarr; {{1}}<\/div><div class=\"match-row\" id=\"q_A_2\"><span class=\"q-num\">2<\/span> <strong>ulterior<\/strong> &rarr; {{2}}<\/div><div class=\"match-row\" id=\"q_A_3\"><span class=\"q-num\">3<\/span> <strong>aloof<\/strong> &rarr; {{3}}<\/div><div class=\"match-row\" id=\"q_A_4\"><span class=\"q-num\">4<\/span> <strong>tedious<\/strong> &rarr; {{4}}<\/div><div class=\"match-row\" id=\"q_A_5\"><span class=\"q-num\">5<\/span> <strong>unprecedented<\/strong> &rarr; {{5}}<\/div>", "blanks": [{"num": "1", "kind": "mc", "options": ["Hidden, secret, not clearly stated or revealed.", "Extremely boring and dull because of taking too long.", "Never done, known, or experienced before.", "Likely to change suddenly and unexpectedly, especially for the worse.", "Cool, distant, and uninvolved in social interactions."], "answer": 3, "auto": true}, {"num": "2", "kind": "mc", "options": ["Hidden, secret, not clearly stated or revealed.", "Extremely boring and dull because of taking too long.", "Never done, known, or experienced before.", "Likely to change suddenly and unexpectedly, especially for the worse.", "Cool, distant, and uninvolved in social interactions."], "answer": 0, "auto": true}, {"num": "3", "kind": "mc", "options": ["Hidden, secret, not clearly stated or revealed.", "Extremely boring and dull because of taking too long.", "Never done, known, or experienced before.", "Likely to change suddenly and unexpectedly, especially for the worse.", "Cool, distant, and uninvolved in social interactions."], "answer": 4, "auto": true}, {"num": "4", "kind": "mc", "options": ["Hidden, secret, not clearly stated or revealed.", "Extremely boring and dull because of taking too long.", "Never done, known, or experienced before.", "Likely to change suddenly and unexpectedly, especially for the worse.", "Cool, distant, and uninvolved in social interactions."], "answer": 1, "auto": true}, {"num": "5", "kind": "mc", "options": ["Hidden, secret, not clearly stated or revealed.", "Extremely boring and dull because of taking too long.", "Never done, known, or experienced before.", "Likely to change suddenly and unexpectedly, especially for the worse.", "Cool, distant, and uninvolved in social interactions."], "answer": 2, "auto": true}]}]}, {"id": "B", "label": "PHẦN II &middot; MULTIPLE CHOICE", "pending": false, "blocks": [{"type": "subheader", "title": "PHẦN II. MULTIPLE CHOICE (10 câu)", "instructions": "Choose the best option (A, B, C, or D) that best fits each of the following sentences."}, {"type": "mc", "num": "6", "text": "Of the two proposed marketing strategies discussed during the emergency session, the ________ seems far more viable.", "options": ["last", "latter", "latest", "later"], "answer": 1, "auto": true}, {"type": "mc", "num": "7", "text": "Mrs. Harrison was appointed to the executive board because she was senior ________ him ________ three full years of managerial service.", "options": ["than / by", "to / by", "to / with", "than / in"], "answer": 1, "auto": true}, {"type": "mc", "num": "8", "text": "When addressing the team's shortcoming, the manager was more ________ than harsh, hoping to prompt immediate progress.", "options": ["stricter", "strict", "strictly", "more strict"], "answer": 1, "auto": true}, {"type": "mc", "num": "9", "text": "Despite being biological twins, Liam remains noticeably more ________ at social gatherings, whereas his brother is extremely outgoing.", "options": ["aloofer", "aloof", "aloofly", "more aloof"], "answer": 1, "auto": true}, {"type": "mc", "num": "10", "text": "Until ________ notice from the board of directors, all capital expenditure projects are strictly suspended due to the volatile economy.", "options": ["farther", "further", "farthest", "furthest"], "answer": 1, "auto": true}, {"type": "mc", "num": "11", "text": "Among all the software engineers recruited this quarter, Sarah proved to be by far the ________ employee in the department.", "options": ["hardest-working", "harder-working", "most hardest-working", "more hard-working"], "answer": 0, "auto": true}, {"type": "mc", "num": "12", "text": "The homemade wine was clearly inferior ________ quality compared to the vintage wine, though it was priced prior ________ the discount.", "options": ["than / to", "in / to", "to / than", "in / than"], "answer": 1, "auto": true}, {"type": "mc", "num": "13", "text": "To adapt to the unprecedented market crisis, the board decided that the company had to implement the new policy ________ than any of its rivals.", "options": ["swiftlier", "swiftly", "more swiftly", "most swiftly"], "answer": 2, "auto": true}, {"type": "mc", "num": "14", "text": "Economic analysts warned that without ________ government intervention, the nation would face an increasingly ________ future.", "options": ["prompt / grim", "prompter / grimmer", "prompt / grimmer", "prompter / grim"], "answer": 0, "auto": true}, {"type": "mc", "num": "15", "text": "Faced with a ________ contract negotiation, the legal counsel employed a far ________ tactic to safeguard the firm's interests.", "options": ["nerve-racking / subtler", "nerve-racked / subtle", "nerve-racking / most subtle", "nerve-racked / subtlest"], "answer": 0, "auto": true}]}, {"id": "C", "label": "PHẦN III &middot; ERROR IDENTIFICATION", "pending": false, "blocks": [{"type": "subheader", "title": "PHẦN III. ERROR IDENTIFICATION (5 câu)", "instructions": "Identify the underlined part (A, B, C, or D) that needs correction, then write the correct form."}, {"type": "clozePassage", "html": "<div id=\"q_C_16a\"><span class=\"q-num\">16<\/span> Given the <u>unprecedented<\/u> <strong>(A)<\/strong> economic crisis, we need to gather <u>farther<\/u> <strong>(B)<\/strong> data <u>prior to<\/u> <strong>(C)<\/strong> <u>making a final decision<\/u> <strong>(D)<\/strong>.<\/div><div class=\"fix-row\" id=\"q_C_16b\">Phần cần sửa: {{16a}} &nbsp;&middot;&nbsp; Sửa lại thành: {{16b}}<\/div>", "blanks": [{"num": "16a", "kind": "mc", "options": ["unprecedented", "farther", "prior to", "making a final decision"], "answer": 1, "auto": true}, {"num": "16b", "kind": "text", "answers": ["further"], "auto": true}]}, {"type": "clozePassage", "html": "<div id=\"q_C_17a\"><span class=\"q-num\">17<\/span> She felt <u>much<\/u> <strong>(A)<\/strong> <u>tireder<\/u> <strong>(B)<\/strong> after attending that <u>tedious<\/u> <strong>(C)<\/strong> seminar on corporate compliance <u>than<\/u> <strong>(D)<\/strong> she had anticipated.<\/div><div class=\"fix-row\" id=\"q_C_17b\">Phần cần sửa: {{17a}} &nbsp;&middot;&nbsp; Sửa lại thành: {{17b}}<\/div>", "blanks": [{"num": "17a", "kind": "mc", "options": ["much", "tireder", "tedious", "than"], "answer": 1, "auto": true}, {"num": "17b", "kind": "text", "answers": ["more tired"], "auto": true}]}, {"type": "clozePassage", "html": "<div id=\"q_C_18a\"><span class=\"q-num\">18<\/span> My <u>elder<\/u> <strong>(A)<\/strong> brother is two years <u>elder<\/u> <strong>(B)<\/strong> than me, yet he <u>consistently<\/u> <strong>(C)<\/strong> seeks my guidance <u>on<\/u> <strong>(D)<\/strong> financial investments.<\/div><div class=\"fix-row\" id=\"q_C_18b\">Phần cần sửa: {{18a}} &nbsp;&middot;&nbsp; Sửa lại thành: {{18b}}<\/div>", "blanks": [{"num": "18a", "kind": "mc", "options": ["elder (my elder brother)", "elder (two years elder)", "consistently", "on"], "answer": 1, "auto": true}, {"num": "18b", "kind": "text", "answers": ["older"], "auto": true}]}, {"type": "clozePassage", "html": "<div id=\"q_C_19a\"><span class=\"q-num\">19<\/span> The new automated system was designed to process transactions much more <u>smooth<\/u> <strong>(A)<\/strong> and <u>meticulously<\/u> <strong>(B)<\/strong> than the <u>outdated<\/u> <strong>(C)<\/strong> <u>legacy software<\/u> <strong>(D)<\/strong>.<\/div><div class=\"fix-row\" id=\"q_C_19b\">Phần cần sửa: {{19a}} &nbsp;&middot;&nbsp; Sửa lại thành: {{19b}}<\/div>", "blanks": [{"num": "19a", "kind": "mc", "options": ["smooth", "meticulously", "outdated", "legacy software"], "answer": 0, "auto": true}, {"num": "19b", "kind": "text", "answers": ["smoothly", "more smoothly"], "auto": true}]}, {"type": "clozePassage", "html": "<div id=\"q_C_20a\"><span class=\"q-num\">20<\/span> Although the new candidate has <u>ulterior<\/u> <strong>(A)<\/strong> motives, her strategic proposal is <u>more superior<\/u> <strong>(B)<\/strong> <u>to<\/u> <strong>(C)<\/strong> any other plan presented <u>so far<\/u> <strong>(D)<\/strong>.<\/div><div class=\"fix-row\" id=\"q_C_20b\">Phần cần sửa: {{20a}} &nbsp;&middot;&nbsp; Sửa lại thành: {{20b}}<\/div>", "blanks": [{"num": "20a", "kind": "mc", "options": ["ulterior", "more superior", "to", "so far"], "answer": 1, "auto": true}, {"num": "20b", "kind": "text", "answers": ["superior"], "auto": true}]}]}, {"id": "D", "label": "PHẦN IV &middot; SENTENCE TRANSFORMATION", "pending": false, "blocks": [{"type": "subheader", "title": "PHẦN IV. SENTENCE TRANSFORMATION (10 câu)", "instructions": "Rewrite each sentence using the word given in brackets so that the meaning remains unchanged. Do not change the word given."}, {"type": "text", "num": "21", "text": "The sequel is nowhere near as captivating as the director's debut movie. &rarr; The director's debut movie ................................................. <strong>(FAR)<\/strong>", "answers": ["The director's debut movie is far more captivating than the sequel."], "auto": false}, {"type": "text", "num": "22", "text": "Both paintings are equally valuable according to the art critic. &rarr; The first painting is ................................................. <strong>(JUST)<\/strong>", "answers": ["The first painting is just as valuable as the second (one)."], "auto": false}, {"type": "text", "num": "23", "text": "Henry does not drive nearly as recklessly as his younger cousin. &rarr; Henry's younger cousin drives ................................................. <strong>(MUCH)<\/strong>", "answers": ["Henry's younger cousin drives much more recklessly than Henry (does)."], "auto": false}, {"type": "text", "num": "24", "text": "No other athlete in our track club runs as fast as Kevin. &rarr; Kevin is ................................................. <strong>(BY)<\/strong>", "answers": ["Kevin is by far the fastest athlete in our track club."], "auto": false}, {"type": "text", "num": "25", "text": "The first laptop model costs just a little more than the second one. &rarr; The first laptop model ................................................. <strong>(SLIGHTLY)<\/strong>", "answers": ["The first laptop model is slightly more expensive than the second (one)."], "auto": false}, {"type": "text", "num": "26", "text": "Rather than being genuinely angry, she was simply feeling sad when she left the room. &rarr; She felt ................................................. <strong>(MORE)<\/strong>", "answers": ["She felt more sad than angry when she left the room."], "auto": false}, {"type": "text", "num": "27", "text": "She was appointed to the board because she had three more years of executive service than he did. &rarr; She was appointed to the board because she ................................................. <strong>(SENIOR)<\/strong>", "answers": ["She was appointed to the board because she was senior to him by three years in executive service."], "auto": false}, {"type": "text", "num": "28", "text": "If we do not take immediate action, the company will face an extremely grim future. &rarr; Without ................................................. <strong>(PROMPT)<\/strong>", "answers": ["Without prompt action, the company will face an extremely grim future."], "auto": false}, {"type": "text", "num": "29", "text": "Auditing the financial statements took much more time and was much more stressful than the department had expected. &rarr; Auditing the financial statements was far ................................................. <strong>(TIME-CONSUMING)<\/strong>", "answers": ["Auditing the financial statements was far more time-consuming and (far more) stressful than the department had expected."], "auto": false}, {"type": "text", "num": "30", "text": "The research paper outlined two distinct methodologies; the first relies on qualitative interviews, whereas the second employs statistical modeling. &rarr; The research paper outlined two distinct methodologies; the former relies on qualitative interviews, whereas ................................................. <strong>(LATTER)<\/strong>", "answers": ["The research paper outlined two distinct methodologies; the former relies on qualitative interviews, whereas the latter employs statistical modeling."], "auto": false}]}]}</script>
+<script>
+// ---------- Load data ----------
+const examData = JSON.parse(document.getElementById('examDataJson').textContent);
+const TEACHER_EMAIL = "ddangminh1905@gmail.com";
+
+const examArea = document.getElementById('examArea');
+const navLinks = document.getElementById('navLinks');
+
+// registry of all answerable items: {id, kind:'mc'|'text'|'clozeText'|'clozeMc'|'essay', auto, num, partId, answers/answer, options, minWords, maxWords, refLabel}
+const registry = [];
+
+function normalize(str) {
+  return (str || '').toLowerCase().trim().replace(/[.,!?;:'"]/g, '').replace(/\s+/g, ' ');
+}
+
+function stripTags(str) {
+  return (str || '').replace(/<[^>]+>/g, '');
+}
+
+function el(tag, className, html) {
+  const e = document.createElement(tag);
+  if (className) e.className = className;
+  if (html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+function renderClozeHtml(html, blanks) {
+  let out = html;
+  blanks.forEach(b => {
+    const token = '{{' + b.num + '}}';
+    let inputHtml = '';
+    if (b.kind === 'text') {
+      inputHtml = '<input type="text" class="inline-blank" id="ans_' + b.num + '" data-num="' + b.num + '" autocomplete="off">';
+    } else {
+      let opts = '<option value="">(' + b.num + ')</option>';
+      b.options.forEach((opt, idx) => {
+        const letter = String.fromCharCode(65 + idx);
+        opts += '<option value="' + idx + '">' + letter + '. ' + opt.replace(/"/g, '&quot;') + '</option>';
+      });
+      inputHtml = '<select class="inline-blank" id="ans_' + b.num + '" data-num="' + b.num + '">' + opts + '</select>';
+    }
+    out = out.split(token).join(inputHtml);
+  });
+  return out;
+}
+
+function buildNavLinks() {
+  examData.parts.forEach(p => {
+    const a = document.createElement('a');
+    a.href = '#part-' + p.id;
+    a.textContent = 'Phần ' + p.id;
+    navLinks.appendChild(a);
+  });
+}
+
+// ---------- Listening players (max N plays each, no seeking/fast-forward/rewind) ----------
+const listeningState = {}; // id -> { kind, maxPlays, playsUsed, started, player/audioEl, lastTime, duration }
+const pendingYoutubeInits = []; // queued until YT API is ready
+
+function buildListeningCard(block) {
+  const card = el('div', 'listening-card');
+  card.id = 'listen_' + block.id;
+
+  let inner = '<div class="listening-head"><span class="listening-icon">🎧</span><div>';
+  inner += '<div class="listening-title">' + block.title + '</div>';
+  inner += '<div class="listening-sub">Chỉ được nghe tối đa ' + block.maxPlays + ' lượt. Không thể tua đi / tua lại.</div>';
+  inner += '</div></div>';
+
+  if (block.source === 'youtube') {
+    inner += '<div class="yt-wrap"><div id="ytplayer_' + block.id + '"></div></div>';
+  } else {
+    inner += '<audio id="audioEl_' + block.id + '" preload="none" src="' + block.url + '" style="display:none;"></audio>';
+  }
+
+  inner += '<div class="listening-controls">';
+  inner += '<button type="button" class="listen-btn" id="btn_' + block.id + '" data-id="' + block.id + '">▶ Nghe bài (còn ' + block.maxPlays + ' lượt)</button>';
+  inner += '<div class="listen-progress"><div class="listen-progress-fill" id="fill_' + block.id + '"></div></div>';
+  inner += '<div class="listen-status" id="status_' + block.id + '"></div>';
+  inner += '</div>';
+
+  card.innerHTML = inner;
+
+  if (block.source === 'youtube') {
+    listeningState[block.id] = {
+      kind: 'youtube', maxPlays: block.maxPlays, playsUsed: 0, started: false,
+      videoId: block.videoId, player: null, lastTime: 0, duration: 0, pollInterval: null
+    };
+    pendingYoutubeInits.push(block.id);
+    if (window.YT && window.YT.Player) createYoutubePlayer(block.id);
+  } else {
+    listeningState[block.id] = {
+      kind: 'mp3', maxPlays: block.maxPlays, playsUsed: 0, started: false,
+      audioEl: null, lastTime: 0
+    };
+  }
+
+  // Defer wiring the audio element / button until it's in the DOM
+  setTimeout(() => wireListeningControls(block), 0);
+
+  return card;
+}
+
+function wireListeningControls(block) {
+  const st = listeningState[block.id];
+  const btn = document.getElementById('btn_' + block.id);
+  if (!btn) return;
+
+  if (block.source === 'mp3') {
+    const audioEl = document.getElementById('audioEl_' + block.id);
+    st.audioEl = audioEl;
+
+    // Prevent seeking: snap back to the last known playback position if the
+    // user (or any external control) tries to jump the scrubber.
+    audioEl.addEventListener('seeking', () => {
+      if (Math.abs(audioEl.currentTime - st.lastTime) > 0.35) {
+        audioEl.currentTime = st.lastTime;
+      }
+    });
+    audioEl.addEventListener('timeupdate', () => {
+      st.lastTime = audioEl.currentTime;
+      const dur = audioEl.duration || 0;
+      const fill = document.getElementById('fill_' + block.id);
+      if (fill && dur > 0) fill.style.width = Math.min(100, (audioEl.currentTime / dur) * 100) + '%';
+    });
+    audioEl.addEventListener('ended', () => onListeningEnded(block.id));
+    audioEl.addEventListener('play', () => updateListenButton(block.id));
+    audioEl.addEventListener('pause', () => updateListenButton(block.id));
+    // Block common seek shortcuts / dragging on the (hidden) element
+    audioEl.addEventListener('keydown', (e) => {
+      if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) e.preventDefault();
+    });
+  }
+
+  btn.addEventListener('click', () => handleListenClick(block.id));
+  updateListenButton(block.id);
+}
+
+function createYoutubePlayer(id) {
+  const st = listeningState[id];
+  if (!st || st.player) return;
+  st.player = new YT.Player('ytplayer_' + id, {
+    height: '1', width: '1',
+    videoId: st.videoId,
+    playerVars: {
+      controls: 0, disablekb: 1, fs: 0, modestbranding: 1,
+      rel: 0, iv_load_policy: 3, playsinline: 1
+    },
+    events: {
+      onReady: () => { /* ready */ },
+      onStateChange: (e) => {
+        if (e.data === YT.PlayerState.ENDED) {
+          onListeningEnded(id);
+        } else if (e.data === YT.PlayerState.PLAYING) {
+          startYoutubeProgressPoll(id);
+          updateListenButton(id);
+        } else if (e.data === YT.PlayerState.PAUSED) {
+          stopYoutubeProgressPoll(id);
+          updateListenButton(id);
+        }
+      }
+    }
+  });
+}
+
+// Global callback required by the YouTube IFrame API
+window.onYouTubeIframeAPIReady = function () {
+  pendingYoutubeInits.forEach(id => createYoutubePlayer(id));
+};
+
+function startYoutubeProgressPoll(id) {
+  const st = listeningState[id];
+  if (st.pollInterval) return;
+  st.pollInterval = setInterval(() => {
+    if (!st.player || !st.player.getCurrentTime) return;
+    const cur = st.player.getCurrentTime();
+    const dur = st.player.getDuration() || 0;
+    // Anti fast-forward/rewind guard: if playback jumps more than expected
+    // for one tick, snap back to the last known position.
+    if (st.lastTime && Math.abs(cur - st.lastTime) > 2.5) {
+      st.player.seekTo(st.lastTime, true);
+    } else {
+      st.lastTime = cur;
+    }
+    const fill = document.getElementById('fill_' + id);
+    if (fill && dur > 0) fill.style.width = Math.min(100, (cur / dur) * 100) + '%';
+  }, 400);
+}
+function stopYoutubeProgressPoll(id) {
+  const st = listeningState[id];
+  if (st.pollInterval) { clearInterval(st.pollInterval); st.pollInterval = null; }
+}
+
+function handleListenClick(id) {
+  const st = listeningState[id];
+  if (!st) return;
+  const btn = document.getElementById('btn_' + id);
+  const status = document.getElementById('status_' + id);
+
+  if (!st.started) {
+    if (st.playsUsed >= st.maxPlays) return; // no plays left
+    st.started = true;
+    st.playsUsed++;
+    st.lastTime = 0;
+    saveState();
+    if (st.kind === 'mp3' && st.audioEl) {
+      st.audioEl.currentTime = 0;
+      st.audioEl.play();
+    } else if (st.kind === 'youtube') {
+      if (st.player && st.player.seekTo) {
+        st.player.seekTo(0, true);
+        st.player.playVideo();
+      } else {
+        // Player not ready yet - try shortly after
+        setTimeout(() => { if (st.player) { st.player.seekTo(0, true); st.player.playVideo(); } }, 500);
+      }
+    }
+  } else {
+    // Toggle play/pause on an in-progress (already counted) listen
+    const isPlaying = st.kind === 'mp3'
+      ? (st.audioEl && !st.audioEl.paused)
+      : (st.player && st.player.getPlayerState && st.player.getPlayerState() === 1);
+    if (isPlaying) {
+      if (st.kind === 'mp3') st.audioEl.pause(); else st.player.pauseVideo();
+    } else {
+      if (st.kind === 'mp3') st.audioEl.play(); else st.player.playVideo();
+    }
+  }
+  updateListenButton(id);
+  if (status) { status.textContent = ''; status.classList.remove('warn'); }
+}
+
+function onListeningEnded(id) {
+  const st = listeningState[id];
+  if (!st) return;
+  st.started = false;
+  stopYoutubeProgressPoll(id);
+  const fill = document.getElementById('fill_' + id);
+  if (fill) fill.style.width = '100%';
+  updateListenButton(id);
+  saveState();
+}
+
+function updateListenButton(id) {
+  const st = listeningState[id];
+  const btn = document.getElementById('btn_' + id);
+  const status = document.getElementById('status_' + id);
+  if (!btn || !st) return;
+  const remaining = st.maxPlays - st.playsUsed;
+
+  if (st.started) {
+    const isPlaying = st.kind === 'mp3'
+      ? (st.audioEl && !st.audioEl.paused)
+      : (st.player && st.player.getPlayerState && st.player.getPlayerState() === 1);
+    btn.disabled = false;
+    btn.textContent = isPlaying ? '⏸ Tạm dừng' : '▶ Tiếp tục';
+  } else if (remaining <= 0) {
+    btn.disabled = true;
+    btn.textContent = '✕ Đã hết lượt nghe';
+    if (status) { status.textContent = 'Em đã dùng hết số lượt nghe cho bài này.'; status.classList.add('warn'); }
+  } else {
+    btn.disabled = false;
+    btn.textContent = (st.playsUsed === 0 ? '▶ Nghe bài (còn ' : '▶ Nghe lại (còn ') + remaining + ' lượt)';
+  }
+}
+
+function renderExam() {
+  examData.parts.forEach(part => {
+    const header = el('div', 'part-header', '<h2 id="part-' + part.id + '">' + part.label + '</h2>');
+    examArea.appendChild(header);
+
+    if (part.pending) {
+      if (part.pendingNote) examArea.appendChild(el('div', 'part-pending', part.pendingNote));
+      return;
+    }
+
+    part.blocks.forEach(block => {
+      if (block.type === 'subheader') {
+        examArea.appendChild(el('div', 'sub-header', block.title));
+        if (block.instructions) examArea.appendChild(el('div', 'sub-instructions', block.instructions));
+      } else if (block.type === 'note') {
+        examArea.appendChild(el('div', 'note-box', block.html));
+      } else if (block.type === 'openQuestion') {
+        const card = el('div', 'card open-question-card');
+        card.id = 'q_' + part.id + '_' + block.num;
+        let inner = '<div class="open-question-title">' + block.prompt + '</div>';
+        inner += '<textarea class="essay-area" id="finalComment" placeholder="' + (block.commentPlaceholder || '').replace(/"/g, '&quot;') + '"></textarea>';
+        card.innerHTML = inner;
+        examArea.appendChild(card);
+      } else if (block.type === 'listening') {
+        examArea.appendChild(buildListeningCard(block));
+      } else if (block.type === 'passage') {
+        examArea.appendChild(el('div', 'card passage-box', block.html));
+      } else if (block.type === 'mc') {
+        const card = el('div', 'card');
+        card.id = 'q_' + part.id + '_' + block.num;
+        let inner = '<div class="q-text"><span class="q-num">' + block.num + '</span>' + block.text + (block.auto ? '' : ' <span class="manual-tag">GV chấm</span>') + '</div>';
+        inner += '<div class="options-grid">';
+        block.options.forEach((opt, idx) => {
+          const letter = String.fromCharCode(65 + idx);
+          inner += '<label class="option-label"><input type="radio" name="mc_' + part.id + '_' + block.num + '" value="' + idx + '"> ' + letter + '. ' + opt.replace(/"/g, '&quot;') + '</label>';
+        });
+        inner += '</div>';
+        card.innerHTML = inner;
+        examArea.appendChild(card);
+        registry.push({ id: part.id + '_' + block.num, kind: 'mc', auto: block.auto, num: block.num, partId: part.id, answer: block.answer, options: block.options, text: block.text });
+      } else if (block.type === 'text') {
+        const card = el('div', 'card');
+        card.id = 'q_' + part.id + '_' + block.num;
+        let inner = '<div class="q-text"><span class="q-num">' + block.num + '</span>' + block.text + (block.auto ? '' : ' <span class="manual-tag">GV chấm</span>') + '</div>';
+        inner += '<input type="text" class="text-input" id="ans_' + part.id + '_' + block.num + '" placeholder="Nhập câu trả lời" autocomplete="off">';
+        card.innerHTML = inner;
+        examArea.appendChild(card);
+        registry.push({ id: part.id + '_' + block.num, kind: 'text', auto: block.auto, num: block.num, partId: part.id, answers: block.answers, refLabel: block.refLabel, text: block.text });
+      } else if (block.type === 'clozePassage') {
+        const card = el('div', 'card passage-box');
+        card.innerHTML = renderClozeHtml(block.html, block.blanks);
+        examArea.appendChild(card);
+        block.blanks.forEach(b => {
+          registry.push({
+            id: part.id + '_' + b.num, kind: b.kind === 'mc' ? 'clozeMc' : 'clozeText', auto: b.auto,
+            num: b.num, partId: part.id, answers: b.answers, answer: b.answer, options: b.options
+          });
+        });
+      } else if (block.type === 'essay') {
+        const card = el('div', 'card');
+        card.id = 'q_' + part.id + '_' + block.num;
+        let inner = '<div class="q-text"><span class="q-num">' + block.title + '</span> <span class="manual-tag">GV chấm</span></div>';
+        inner += '<div style="margin-top:8px;">' + block.prompt + '</div>';
+        inner += '<textarea class="essay-area" id="ans_' + part.id + '_' + block.num + '" placeholder="Viết bài luận của bạn ở đây..."></textarea>';
+        inner += '<div class="essay-meta" id="wordCount_' + part.id + '_' + block.num + '">0 từ</div>';
+        card.innerHTML = inner;
+        examArea.appendChild(card);
+        registry.push({ id: part.id + '_' + block.num, kind: 'essay', auto: false, num: block.num, partId: part.id });
+      }
+    });
+  });
+}
+
+function getAnswerValue(item) {
+  if (item.kind === 'mc') {
+    const checked = document.querySelector('input[name="mc_' + item.partId + '_' + item.num + '"]:checked');
+    return checked ? parseInt(checked.value, 10) : null;
+  } else if (item.kind === 'text') {
+    const elx = document.getElementById('ans_' + item.partId + '_' + item.num);
+    return elx ? elx.value : '';
+  } else if (item.kind === 'clozeText') {
+    const elx = document.getElementById('ans_' + item.num);
+    return elx ? elx.value : '';
+  } else if (item.kind === 'clozeMc') {
+    const elx = document.getElementById('ans_' + item.num);
+    return elx && elx.value !== '' ? parseInt(elx.value, 10) : null;
+  } else if (item.kind === 'essay') {
+    const elx = document.getElementById('ans_' + item.partId + '_' + item.num);
+    return elx ? elx.value : '';
+  }
+  return '';
+}
+
+function isAnswered(item) {
+  const v = getAnswerValue(item);
+  if (item.kind === 'mc' || item.kind === 'clozeMc') return v !== null && v !== undefined;
+  return v && v.trim && v.trim() !== '';
+}
+
+function isCorrect(item) {
+  if (item.kind === 'mc' || item.kind === 'clozeMc') {
+    const v = getAnswerValue(item);
+    return v !== null && v === item.answer;
+  }
+  if (item.kind === 'text' || item.kind === 'clozeText') {
+    const v = normalize(getAnswerValue(item));
+    return (item.answers || []).some(a => normalize(a) === v);
+  }
+  return false;
+}
+
+function updateProgress() {
+  let answered = 0;
+  registry.forEach(item => { if (isAnswered(item)) answered++; });
+  const pct = registry.length ? Math.round((answered / registry.length) * 100) : 0;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = answered + ' / ' + registry.length + ' câu đã trả lời (' + pct + '%)';
+  updateEssayWordCounts();
+  updateMascot(pct);
+  updateStreak(answered);
+  checkPartCompletion();
+}
+
+function updateEssayWordCounts() {
+  registry.filter(i => i.kind === 'essay').forEach(item => {
+    const elx = document.getElementById('ans_' + item.partId + '_' + item.num);
+    const label = document.getElementById('wordCount_' + item.partId + '_' + item.num);
+    if (!elx || !label) return;
+    const words = elx.value.trim() === '' ? 0 : elx.value.trim().split(/\s+/).length;
+    label.textContent = words + ' từ';
+  });
+}
+
+// ---------- NEW: Dynamic mascot ----------
+function updateMascot(pct) {
+  const m = document.getElementById('mascotEl');
+  if (!m) return;
+  let emoji = '😴';
+  if (pct >= 100) emoji = '🏆';
+  else if (pct >= 80) emoji = '🔥';
+  else if (pct >= 21) emoji = '🚀';
+  m.textContent = emoji;
+}
+
+// ---------- NEW: Combo streak (resets when the student switches tabs) ----------
+let streakCount = 0;
+let lastAnsweredCount = 0;
+function updateStreak(answered) {
+  const chip = document.getElementById('streakChip');
+  if (answered > lastAnsweredCount) {
+    streakCount += (answered - lastAnsweredCount);
+    if (chip) {
+      chip.style.display = 'inline-block';
+      chip.textContent = '🔥 Streak: ' + streakCount;
+    }
+  }
+  lastAnsweredCount = answered;
+}
+function resetStreak() {
+  streakCount = 0;
+  lastAnsweredCount = 0;
+  registry.forEach(item => { if (isAnswered(item)) lastAnsweredCount++; });
+  const chip = document.getElementById('streakChip');
+  if (chip) chip.textContent = '🔥 Streak: 0';
+}
+
+// ---------- NEW: a soft "ting" the first time each part is fully answered ----------
+const completedParts = new Set();
+function checkPartCompletion() {
+  examData.parts.forEach(part => {
+    if (part.pending) return;
+    const items = registry.filter(i => i.partId === part.id);
+    if (items.length === 0 || completedParts.has(part.id)) return;
+    if (items.every(isAnswered)) {
+      completedParts.add(part.id);
+      playTing();
+    }
+  });
+}
+
+// ---------- NEW: Web Audio synthesizer (no external mp3 files) ----------
+let audioCtx = null;
+let soundEnabled = true;
+function getAudioCtx() {
+  if (!audioCtx) {
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if (Ctx) audioCtx = new Ctx();
+  }
+  return audioCtx;
+}
+function beep(freq, duration, type, vol, delay) {
+  if (!soundEnabled) return;
+  try {
+    const ctx = getAudioCtx();
+    if (!ctx) return;
+    const t0 = ctx.currentTime + (delay || 0);
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = type || 'sine';
+    osc.frequency.setValueAtTime(freq, t0);
+    gain.gain.setValueAtTime(vol || 0.12, t0);
+    gain.gain.exponentialRampToValueAtTime(0.001, t0 + duration);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(t0);
+    osc.stop(t0 + duration + 0.03);
+  } catch (e) { /* Web Audio not available - fail silently */ }
+}
+function playPop() { beep(880, 0.07, 'triangle', 0.10); }
+function playTing() { beep(1046, 0.12, 'sine', 0.13); beep(1568, 0.14, 'sine', 0.10, 0.07); }
+function playFanfare() {
+  [523, 659, 784, 1046].forEach((f, i) => beep(f, 0.2, 'triangle', 0.14, i * 0.13));
+}
+function setSoundEnabled(on) {
+  soundEnabled = on;
+  const btn = document.getElementById('muteToggleBtn');
+  if (btn) btn.textContent = on ? '🔊' : '🔇';
+  try { localStorage.setItem('anc1_sound', on ? '1' : '0'); } catch (e) {}
+}
+
+// ---------- NEW: theme picker (Cổ điển / Xanh Trầm / Nâu Ấm / Rừng Xanh) ----------
+const THEME_NAMES = ['classic', 'slate', 'latte', 'sage'];
+function setTheme(name) {
+  if (THEME_NAMES.indexOf(name) === -1) name = 'classic';
+  THEME_NAMES.forEach(t => {
+    if (t !== 'classic') document.body.classList.toggle('theme-' + t, t === name);
+  });
+  const select = document.getElementById('themeSelect');
+  if (select) select.value = name;
+  try { localStorage.setItem('anc1_theme', name); } catch (e) {}
+}
+
+// ---------- NEW: confetti on submit (loaded lazily from CDN) ----------
+let confettiLoading = null;
+function fireConfetti() {
+  if (typeof confetti === 'function') {
+    confetti({ particleCount: 140, spread: 80, origin: { y: 0.6 } });
+    setTimeout(() => confetti({ particleCount: 80, spread: 100, origin: { y: 0.4 } }), 250);
+    return;
+  }
+  if (!confettiLoading) {
+    confettiLoading = new Promise((resolve) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js';
+      s.onload = resolve;
+      s.onerror = resolve;
+      document.head.appendChild(s);
+    });
+  }
+  confettiLoading.then(() => { if (typeof confetti === 'function') fireConfetti(); });
+}
+
+// ---------- NEW: elimination tool - right-click (desktop) or double-tap (mobile)
+// on an answer label strikes it through without selecting it ----------
+examArea.addEventListener('dblclick', (e) => {
+  const label = e.target.closest('.option-label');
+  if (!label || examLocked) return;
+  e.preventDefault();
+  label.classList.toggle('eliminated');
+  playPop();
+});
+
+// ---------- NEW: tap-to-toggle vocabulary tooltips on touch devices ----------
+document.addEventListener('click', (e) => {
+  const term = e.target.closest('.vocab-term');
+  document.querySelectorAll('.vocab-term.tt-active').forEach(t => { if (t !== term) t.classList.remove('tt-active'); });
+  if (term) term.classList.toggle('tt-active');
+});
+
+examArea.addEventListener('change', () => { playPop(); updateProgress(); saveState(); });
+examArea.addEventListener('input', () => { updateProgress(); saveState(); });
+document.getElementById('studentName').addEventListener('input', () => {
+  saveState();
+  document.getElementById('nameBox').classList.remove('field-error');
+});
+document.getElementById('studentName').addEventListener('change', saveState);
+
+document.getElementById('themeSelect').addEventListener('change', (e) => {
+  setTheme(e.target.value);
+});
+document.getElementById('muteToggleBtn').addEventListener('click', () => {
+  setSoundEnabled(!soundEnabled);
+});
+(function initThemeAndSound() {
+  let savedTheme = null, savedSound = null;
+  try { savedTheme = localStorage.getItem('anc1_theme'); } catch (e) {}
+  try { savedSound = localStorage.getItem('anc1_sound'); } catch (e) {}
+  setTheme(savedTheme || 'classic');
+  setSoundEnabled(savedSound !== '0');
+})();
+
+// ---------- Vocabulary highlighting (underline words to flag as unknown) ----------
+const highlightedVocab = new Set();
+let highlightPopup = null;
+
+function ensureHighlightPopup() {
+  if (highlightPopup) return highlightPopup;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'highlight-popup-btn';
+  btn.textContent = '✏️ Gạch chân từ này';
+  document.body.appendChild(btn);
+  btn.addEventListener('mousedown', (e) => e.preventDefault()); // keep selection alive
+  btn.addEventListener('click', applyHighlight);
+  highlightPopup = btn;
+  return btn;
+}
+
+function hideHighlightPopup() {
+  if (highlightPopup) highlightPopup.style.display = 'none';
+}
+
+// Use `selectionchange` (throttled to one update per animation frame) instead of
+// `mouseup` so the popup tracks the *actual* live selection — including while a
+// student fine-tunes the selection by dragging the native touch handles, which
+// never fires mouseup. This is what removes the jerky / laggy feel on phones
+// and tablets: the popup now stays in sync with the browser's own selection
+// rendering instead of snapping to a stale position after the fact.
+let highlightSelRAF = null;
+
+function updateHighlightPopupFromSelection() {
+  highlightSelRAF = null;
+  if (examLocked) { hideHighlightPopup(); return; }
+  const sel = window.getSelection();
+  if (!sel || sel.isCollapsed || sel.rangeCount === 0) { hideHighlightPopup(); return; }
+  const text = sel.toString().trim();
+  if (!text || text.length > 60) { hideHighlightPopup(); return; }
+  const range = sel.getRangeAt(0);
+  const node = range.commonAncestorContainer;
+  const anchorEl = node.nodeType === 1 ? node : node.parentElement;
+  if (!anchorEl || !anchorEl.closest('.card, .passage-box')) { hideHighlightPopup(); return; }
+  const rect = range.getBoundingClientRect();
+  if (!rect || (rect.width === 0 && rect.height === 0)) { hideHighlightPopup(); return; }
+  const popup = ensureHighlightPopup();
+  popup.style.display = 'block';
+  popup.style.left = Math.max(8, rect.left + window.scrollX) + 'px';
+  popup.style.top = Math.max(8, rect.top + window.scrollY - 40) + 'px';
+  popup._pendingRange = range.cloneRange();
+  popup._pendingText = text;
+}
+
+document.addEventListener('selectionchange', () => {
+  if (examLocked) return;
+  if (highlightSelRAF) cancelAnimationFrame(highlightSelRAF);
+  highlightSelRAF = requestAnimationFrame(updateHighlightPopupFromSelection);
+});
+
+document.addEventListener('mousedown', (e) => {
+  if (highlightPopup && e.target !== highlightPopup && !e.target.closest('.vocab-underline')) {
+    hideHighlightPopup();
+  }
+});
+document.addEventListener('touchstart', (e) => {
+  if (highlightPopup && e.target !== highlightPopup && !e.target.closest('.vocab-underline') && !e.target.closest('.card, .passage-box')) {
+    hideHighlightPopup();
+  }
+}, { passive: true });
+
+function applyHighlight() {
+  const popup = highlightPopup;
+  if (!popup || !popup._pendingRange) return;
+  const range = popup._pendingRange;
+  const mark = document.createElement('span');
+  mark.className = 'vocab-underline';
+  mark.title = 'Bấm để bỏ gạch chân';
+  try {
+    range.surroundContents(mark);
+  } catch (err) {
+    try {
+      mark.appendChild(range.extractContents());
+      range.insertNode(mark);
+    } catch (err2) {
+      alert('Em hãy chọn một từ hoặc cụm từ ngắn gọn hơn nhé (trong cùng một dòng).');
+      hideHighlightPopup();
+      return;
+    }
+  }
+  addVocabWord(popup._pendingText);
+  window.getSelection().removeAllRanges();
+  hideHighlightPopup();
+  saveState();
+}
+
+function addVocabWord(word) {
+  const w = (word || '').trim();
+  if (!w) return;
+  highlightedVocab.add(w);
+  renderVocabList();
+}
+
+function removeVocabWord(word) {
+  highlightedVocab.delete(word);
+  renderVocabList();
+}
+
+function unwrapHighlight(span) {
+  const parent = span.parentNode;
+  if (!parent) return;
+  while (span.firstChild) parent.insertBefore(span.firstChild, span);
+  parent.removeChild(span);
+  parent.normalize();
+}
+
+function renderVocabList() {
+  const box = document.getElementById('vocabList');
+  if (!box) return;
+  if (highlightedVocab.size === 0) {
+    box.innerHTML = '<span class="vocab-empty">Chưa có từ nào được đánh dấu.</span>';
+    return;
+  }
+  box.innerHTML = '';
+  highlightedVocab.forEach(w => {
+    const chip = document.createElement('span');
+    chip.className = 'vocab-chip';
+    chip.textContent = w;
+    const x = document.createElement('button');
+    x.type = 'button'; x.className = 'vocab-chip-remove'; x.textContent = '×';
+    x.title = 'Bỏ đánh dấu từ này';
+    x.addEventListener('click', () => {
+      removeVocabWord(w);
+      examArea.querySelectorAll('.vocab-underline').forEach(span => {
+        if (span.textContent.trim() === w) unwrapHighlight(span);
+      });
+      saveState();
+    });
+    chip.appendChild(x);
+    box.appendChild(chip);
+  });
+}
+
+examArea.addEventListener('click', (e) => {
+  const span = e.target.closest('.vocab-underline');
+  if (span && !examLocked) {
+    const word = span.textContent.trim();
+    unwrapHighlight(span);
+    removeVocabWord(word);
+    saveState();
+  }
+});
+
+// ---------- Flag questions for review ----------
+const flaggedQuestions = new Set();
+
+function buildFlagGrid() {
+  const grid = document.getElementById('flagGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  const nums = [...new Set(registry.map(i => String(parseInt(i.num, 10))))].sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+  nums.forEach(num => {
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'flag-chip';
+    chip.textContent = num;
+    chip.dataset.num = num;
+    chip.addEventListener('click', () => {
+      if (flaggedQuestions.has(num)) {
+        flaggedQuestions.delete(num);
+        chip.classList.remove('flagged');
+      } else {
+        flaggedQuestions.add(num);
+        chip.classList.add('flagged');
+      }
+      saveState();
+    });
+    grid.appendChild(chip);
+  });
+}
+
+// ---------- Submit / grading ----------
+let examLocked = false;
+
+function lockAllInputs() {
+  examArea.querySelectorAll('input, select, textarea').forEach(i => i.disabled = true);
+  Object.keys(listeningState).forEach(id => {
+    const st = listeningState[id];
+    if (st.kind === 'mp3' && st.audioEl) st.audioEl.pause();
+    if (st.kind === 'youtube' && st.player && st.player.pauseVideo) st.player.pauseVideo();
+    const btn = document.getElementById('btn_' + id);
+    if (btn) { btn.disabled = true; btn.textContent = '✕ Bài đã nộp'; }
+  });
+  document.querySelectorAll('.flag-chip').forEach(c => c.disabled = true);
+  const futureTopicsEl = document.getElementById('futureTopics');
+  const featureSuggestEl = document.getElementById('featureSuggestions');
+  if (futureTopicsEl) futureTopicsEl.disabled = true;
+  if (featureSuggestEl) featureSuggestEl.disabled = true;
+  hideHighlightPopup();
+}
+
+function gradeExam() {
+  let autoScore = 0, autoTotal = 0;
+  registry.forEach(item => {
+    if (item.kind === 'mc' || item.kind === 'clozeMc') {
+      const inputEl = item.kind === 'mc' ? null : document.getElementById('ans_' + item.num);
+      const correct = isCorrect(item);
+      if (item.auto) { autoTotal++; if (correct) autoScore++; }
+      if (item.kind === 'mc') {
+        const card = document.getElementById('q_' + item.partId + '_' + item.num);
+        card.querySelectorAll('.option-label').forEach(l => l.classList.remove('correct', 'incorrect'));
+        const checked = document.querySelector('input[name="mc_' + item.partId + '_' + item.num + '"]:checked');
+        if (checked && item.auto) checked.closest('.option-label').classList.add(correct ? 'correct' : 'incorrect');
+      } else {
+        if (inputEl && item.auto) {
+          inputEl.classList.remove('correct', 'incorrect');
+          if (inputEl.value !== '') inputEl.classList.add(correct ? 'correct' : 'incorrect');
+        }
+      }
+    } else if (item.kind === 'text' || item.kind === 'clozeText') {
+      const correct = isCorrect(item);
+      if (item.auto) { autoTotal++; if (correct) autoScore++; }
+      const inputEl = item.kind === 'text' ? document.getElementById('ans_' + item.partId + '_' + item.num) : document.getElementById('ans_' + item.num);
+      if (inputEl && item.auto) {
+        inputEl.classList.remove('correct', 'incorrect');
+        if (inputEl.value !== '') inputEl.classList.add(correct ? 'correct' : 'incorrect');
+      }
+    }
+  });
+  return { autoScore, autoTotal };
+}
+
+function getUnansweredList() {
+  const list = [];
+  registry.forEach(item => { if (!isAnswered(item)) list.push(item); });
+  return list;
+}
+
+function buildResultsReview() {
+  const card = document.getElementById('resultsReviewCard');
+  const wrap = document.getElementById('resultsReview');
+  if (!card || !wrap) return;
+  const items = registry.filter(i => i.auto);
+  if (items.length === 0) { card.style.display = 'none'; return; }
+  card.style.display = 'block';
+  wrap.innerHTML = items.map(item => {
+    const correct = isCorrect(item);
+    return '<button type="button" class="review-chip ' + (correct ? 'correct' : 'incorrect') +
+      '" data-kind="' + item.kind + '" data-num="' + item.num + '" data-partid="' + item.partId +
+      '" title="Câu ' + item.num + ' - ' + (correct ? 'đúng' : 'sai, bấm để xem lại') + '">' +
+      item.num + (correct ? ' ✓' : ' ✗') + '</button>';
+  }).join('');
+  wrap.querySelectorAll('.review-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const kind = chip.dataset.kind, num = chip.dataset.num, partId = chip.dataset.partid;
+      const target = document.getElementById('q_' + partId + '_' + num);
+      if (target && target.scrollIntoView) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.style.transition = 'box-shadow 0.2s ease';
+        target.style.boxShadow = '0 0 0 4px var(--gold-soft)';
+        setTimeout(() => { target.style.boxShadow = ''; }, 1600);
+      }
+    });
+  });
+}
+
+function doSubmit() {
+  examLocked = true;
+  const { autoScore, autoTotal } = gradeExam();
+  lockAllInputs();
+  document.body.classList.remove('exam-active');
+
+  const manualCount = registry.filter(i => !i.auto).length;
+  const wrongCount = autoTotal - autoScore;
+  buildResultsReview();
+  const keyCard = document.getElementById('answerKeyCard');
+  if (keyCard) keyCard.style.display = 'block';
+  const scoreBox = document.getElementById('scoreBox');
+  scoreBox.style.display = 'block';
+  scoreBox.innerHTML =
+    '<p><strong>Điểm tự động chấm: ' + autoScore + ' / ' + autoTotal + '</strong> (Phần I, II &amp; III - matching, trắc nghiệm &amp; tìm lỗi sai)</p>' +
+    '<p>Số câu đúng: ' + autoScore + ' &middot; Số câu sai/bỏ trống: ' + wrongCount + ' (xem chi tiết ở bảng phía trên điểm số).</p>' +
+    (manualCount > 0 ? '<p>Còn ' + manualCount + ' câu (Phần IV - Sentence Transformation) cần thầy/cô chấm trực tiếp.</p>' : '') +
+    '<p>Số lần rời khỏi trang trong khi làm bài: ' + tabSwitchCount + '</p>' +
+    '<p>Tổng thời gian làm bài: ' + formatTime(secondsElapsed) + '</p>' +
+    '<p style="margin-top:12px;">Cảm ơn em đã hoàn thành bài tập buổi 39. Kết quả, từ vựng em đánh dấu và các câu cần xem lại đang được tự động gửi cho anh/chị, em không cần làm gì thêm. Hẹn gặp em buổi học tới! 🎉</p>';
+  const reviewCard = document.getElementById('resultsReviewCard');
+  if (reviewCard && reviewCard.style.display !== 'none' && reviewCard.scrollIntoView) {
+    reviewCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } else if (scoreBox.scrollIntoView) {
+    scoreBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  playFanfare();
+  fireConfetti();
+
+  document.getElementById('submitBtn').disabled = true;
+  stopTimer();
+  sendResultEmail(autoScore, autoTotal);
+}
+
+document.getElementById('submitBtn').addEventListener('click', () => {
+  const nameEl = document.getElementById('studentName');
+  if (!nameEl.value.trim()) {
+    document.getElementById('nameBox').classList.add('field-error');
+    nameEl.focus();
+    if (nameEl.scrollIntoView) nameEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  document.getElementById('nameBox').classList.remove('field-error');
+  const unanswered = getUnansweredList();
+  if (unanswered.length > 0) {
+    const listBox = document.getElementById('unansweredList');
+    listBox.innerHTML = unanswered.map(i => 'Phần ' + i.partId + ' - Câu ' + i.num).join('<br>');
+    document.getElementById('confirmText').textContent = 'Bạn còn ' + unanswered.length + ' câu chưa trả lời:';
+    document.getElementById('confirmOverlay').style.display = 'flex';
+  } else {
+    doSubmit();
+  }
+});
+document.getElementById('backToExam').addEventListener('click', () => {
+  document.getElementById('confirmOverlay').style.display = 'none';
+});
+document.getElementById('confirmSubmitAnyway').addEventListener('click', () => {
+  document.getElementById('confirmOverlay').style.display = 'none';
+  doSubmit();
+});
+
+// ---------- Email (sent automatically on submit) ----------
+function sendResultEmail(autoScore, autoTotal) {
+  const name = document.getElementById('studentName').value.trim() || "Học sinh chưa ghi tên";
+
+  let lines = [];
+  lines.push("Học sinh: " + name);
+  lines.push("Đề: " + (examData.examTitle || "ADVANCED ENGLISH PLACEMENT TEST"));
+  lines.push("Điểm tự động chấm: " + autoScore + " / " + autoTotal);
+  lines.push("Số lần rời khỏi trang khi làm bài: " + tabSwitchCount);
+  lines.push("");
+
+  examData.parts.forEach(part => {
+    if (part.pending) return;
+    lines.push("=== PHẦN " + part.id + " ===");
+    registry.filter(i => i.partId === part.id).forEach(item => {
+      const v = getAnswerValue(item);
+      let display = '';
+      if (item.kind === 'mc' || item.kind === 'clozeMc') {
+        display = (v !== null && v !== undefined) ? String.fromCharCode(65 + v) + '. ' + stripTags(item.options[v]) : '(không trả lời)';
+      } else {
+        display = (v && v.trim() !== '') ? v : '(không trả lời)';
+      }
+      let tag = '';
+      if (item.auto) tag = isCorrect(item) ? ' [đúng]' : ' [sai]';
+      else tag = ' [GV chấm]';
+      lines.push('Câu ' + item.num + ': ' + display + tag);
+    });
+    lines.push('');
+  });
+
+  let openQuestionBlock = null;
+  examData.parts.forEach(part => {
+    (part.blocks || []).forEach(b => { if (b.type === 'openQuestion') openQuestionBlock = b; });
+  });
+  if (openQuestionBlock) {
+    lines.push("=== CÂU HỎI / CHIA SẺ THÊM ===");
+    const commentEl = document.getElementById('finalComment');
+    const comment = commentEl && commentEl.value.trim() !== '' ? commentEl.value.trim() : '(không có)';
+    lines.push(comment);
+    lines.push('');
+  }
+
+  lines.push("=== CÂU HỎI HỌC SINH ĐÁNH DẤU CẦN XEM LẠI ===");
+  lines.push(flaggedQuestions.size > 0
+    ? [...flaggedQuestions].sort((a, b) => parseInt(a, 10) - parseInt(b, 10)).map(n => 'Câu ' + n).join(', ')
+    : '(không có)');
+  lines.push('');
+
+  lines.push("=== TỪ VỰNG HỌC SINH CHƯA CHẮC NGHĨA (đã gạch chân) ===");
+  lines.push(highlightedVocab.size > 0 ? [...highlightedVocab].join(', ') : '(không có)');
+  lines.push('');
+
+  const futureTopicsEl = document.getElementById('futureTopics');
+  lines.push("=== CHỦ ĐỀ HỌC SINH MUỐN TÌM HIỂU THÊM ===");
+  lines.push(futureTopicsEl && futureTopicsEl.value.trim() !== '' ? futureTopicsEl.value.trim() : '(không có)');
+  lines.push('');
+
+  const featureSuggestEl = document.getElementById('featureSuggestions');
+  lines.push("=== ĐỀ XUẤT TÍNH NĂNG MỚI CHO NỀN TẢNG ===");
+  lines.push(featureSuggestEl && featureSuggestEl.value.trim() !== '' ? featureSuggestEl.value.trim() : '(không có)');
+  lines.push('');
+
+  const status = document.getElementById('emailStatus');
+  if (status) {
+    status.style.display = 'block';
+    status.style.color = '#4b5b54';
+    status.textContent = "Đang gửi kết quả cho giáo viên...";
+  }
+
+  fetch("https://formsubmit.co/ajax/" + TEACHER_EMAIL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify({
+      _subject: "Kết quả bài tập - Buổi 39 (So sánh nâng cao) - " + name,
+      name: name,
+      score: autoScore + " / " + autoTotal,
+      tab_switches: String(tabSwitchCount),
+      answers: lines.join("\n")
+    })
+  })
+  .then(res => res.json())
+  .then(() => {
+    if (status) {
+      status.style.color = '#1c6e4a';
+      status.textContent = "Kết quả đã được gửi đến giáo viên.";
+    }
+  })
+  .catch(() => {
+    if (status) {
+      status.style.color = '#a8402d';
+      status.textContent = "Gửi thất bại. Vui lòng kiểm tra kết nối mạng - em cứ yên tâm, bài làm vẫn đã được lưu, anh/chị sẽ hỗ trợ lấy lại kết quả nếu cần.";
+    }
+  });
+}
+
+// ---------- Stopwatch (không giới hạn thời gian - chỉ đếm để tham khảo, không tự nộp bài) ----------
+let secondsElapsed = 0;
+let timerInterval = null;
+function formatTime(s) {
+  const m = Math.floor(s / 60);
+  const sec = s % 60;
+  return String(m).padStart(2, '0') + ':' + String(sec).padStart(2, '0');
+}
+function updateTimerDisplay() {
+  const chip = document.getElementById('timerChip');
+  if (chip) chip.textContent = '⏱ ' + formatTime(secondsElapsed);
+}
+function tickTimer() {
+  secondsElapsed++;
+  updateTimerDisplay();
+  saveState();
+}
+function startTimer() { timerInterval = setInterval(tickTimer, 1000); }
+function stopTimer() { if (timerInterval) clearInterval(timerInterval); }
+
+// ---------- Tab switch / exit counter ----------
+let tabSwitchCount = 0;
+function registerSwitch() {
+  if (examLocked) return;
+  tabSwitchCount++;
+  document.getElementById('switchChip').textContent = 'Rời khỏi trang: ' + tabSwitchCount + ' lần';
+  resetStreak();
+  saveState();
+}
+document.addEventListener('visibilitychange', () => { if (document.hidden) registerSwitch(); });
+window.addEventListener('blur', registerSwitch);
+
+// ---------- Local persistence (autosave / resume) ----------
+const STORAGE_KEY = 'anc1_btvn_buoi39';
+
+function saveState() {
+  try {
+    const answers = {};
+    registry.forEach(item => { answers[item.id] = getAnswerValue(item); });
+    const commentEl = document.getElementById('finalComment');
+    const nameEl = document.getElementById('studentName');
+    const futureTopicsEl = document.getElementById('futureTopics');
+    const featureSuggestEl = document.getElementById('featureSuggestions');
+    const listening = {};
+    Object.keys(listeningState).forEach(id => {
+      listening[id] = { playsUsed: listeningState[id].playsUsed };
+    });
+    const state = {
+      studentName: nameEl ? nameEl.value : '',
+      answers: answers,
+      finalComment: commentEl ? commentEl.value : '',
+      futureTopics: futureTopicsEl ? futureTopicsEl.value : '',
+      featureSuggestions: featureSuggestEl ? featureSuggestEl.value : '',
+      flaggedQuestions: [...flaggedQuestions],
+      highlightedVocab: [...highlightedVocab],
+      tabSwitchCount: tabSwitchCount,
+      secondsElapsed: secondsElapsed,
+      examLocked: examLocked,
+      listening: listening,
+      savedAt: Date.now()
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch (e) { /* localStorage không khả dụng — bỏ qua autosave */ }
+}
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) { return null; }
+}
+
+function restoreState() {
+  const state = loadState();
+  if (!state) return;
+
+  const nameEl = document.getElementById('studentName');
+  if (nameEl && state.studentName) nameEl.value = state.studentName;
+
+  registry.forEach(item => {
+    const v = state.answers ? state.answers[item.id] : undefined;
+    if (v === null || v === undefined || v === '') return;
+    if (item.kind === 'mc') {
+      const inputEl = document.querySelector('input[name="mc_' + item.partId + '_' + item.num + '"][value="' + v + '"]');
+      if (inputEl) inputEl.checked = true;
+    } else if (item.kind === 'clozeMc' || item.kind === 'clozeText') {
+      const elx = document.getElementById('ans_' + item.num);
+      if (elx) elx.value = v;
+    } else {
+      const elx = document.getElementById('ans_' + item.partId + '_' + item.num);
+      if (elx) elx.value = v;
+    }
+  });
+
+  const commentEl = document.getElementById('finalComment');
+  if (commentEl && state.finalComment) commentEl.value = state.finalComment;
+
+  const futureTopicsEl = document.getElementById('futureTopics');
+  if (futureTopicsEl && state.futureTopics) futureTopicsEl.value = state.futureTopics;
+  const featureSuggestEl = document.getElementById('featureSuggestions');
+  if (featureSuggestEl && state.featureSuggestions) featureSuggestEl.value = state.featureSuggestions;
+
+  if (Array.isArray(state.flaggedQuestions)) {
+    state.flaggedQuestions.forEach(num => flaggedQuestions.add(num));
+    document.querySelectorAll('.flag-chip').forEach(chip => {
+      if (flaggedQuestions.has(chip.dataset.num)) chip.classList.add('flagged');
+    });
+  }
+  if (Array.isArray(state.highlightedVocab)) {
+    state.highlightedVocab.forEach(w => highlightedVocab.add(w));
+    renderVocabList();
+  }
+
+  if (state.listening) {
+    Object.keys(state.listening).forEach(id => {
+      if (listeningState[id] && typeof state.listening[id].playsUsed === 'number') {
+        listeningState[id].playsUsed = Math.min(state.listening[id].playsUsed, listeningState[id].maxPlays);
+        listeningState[id].started = false;
+        updateListenButton(id);
+      }
+    });
+  }
+
+  if (typeof state.tabSwitchCount === 'number') {
+    tabSwitchCount = state.tabSwitchCount;
+    document.getElementById('switchChip').textContent = 'Rời khỏi trang: ' + tabSwitchCount + ' lần';
+  }
+  if (typeof state.secondsElapsed === 'number') {
+    secondsElapsed = Math.max(0, state.secondsElapsed);
+  }
+  updateTimerDisplay();
+
+  if (state.examLocked) {
+    doSubmit();
+  }
+}
+
+window.addEventListener('beforeunload', saveState);
+
+// ---------- Anti-copy deterrents ----------
+let toastTimeout = null;
+function showCopyToast() {
+  const toast = document.getElementById('copyToast');
+  toast.classList.add('show');
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => toast.classList.remove('show'), 1800);
+}
+document.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  // NEW: right-click on an answer option strikes it through (elimination tool)
+  // instead of showing the anti-copy toast.
+  const label = e.target.closest('.option-label');
+  if (label && !examLocked) {
+    label.classList.toggle('eliminated');
+    playPop();
+    return;
+  }
+  showCopyToast();
+});
+document.addEventListener('copy', (e) => { e.preventDefault(); showCopyToast(); });
+document.addEventListener('cut', (e) => { e.preventDefault(); showCopyToast(); });
+document.addEventListener('selectstart', (e) => {
+  const tag = e.target.tagName;
+  if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+  // Allow selecting text inside question / passage cards so students can
+  // mark vocabulary they don't know - see the highlighting feature below.
+  if (e.target.closest && e.target.closest('.card, .passage-box')) return;
+  e.preventDefault();
+});
+document.addEventListener('keydown', (e) => {
+  const key = e.key ? e.key.toLowerCase() : '';
+  const blockedCombo = (e.ctrlKey || e.metaKey) && ['c', 'u', 's', 'x'].includes(key);
+  const devTools = key === 'f12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'j', 'c'].includes(key));
+  if (blockedCombo || devTools) {
+    e.preventDefault();
+    showCopyToast();
+  }
+});
+
+// ---------- Init ----------
+buildNavLinks();
+renderExam();
+buildFlagGrid();
+renderVocabList();
+restoreState();
+resetStreak();
+updateProgress();
+if (!examLocked) {
+  document.body.classList.add('exam-active');
+  startTimer();
+}
+
+</script>
+</body>
+</html>
